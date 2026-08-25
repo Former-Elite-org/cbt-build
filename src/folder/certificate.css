@@ -1,0 +1,146 @@
+/* Google Font Import - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+ 
+}
+
+header .logo {
+  
+}
+header .logo img {
+  
+}
+
+header .header-text {
+  text-align: center;
+  display: grid;
+  place-items: center, center;
+  /* height: 100%; */
+  width: 80%;
+}
+header .header-text h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  text-align: center;
+  color: #000000d3;
+}
+header .header-text span {
+  font-size: 14px;
+}
+.header-title {
+  width: 100%;
+  /* background-color: #b6b6b669; */
+  text-align: center;
+  padding-block: 7px;
+  margin-bottom: 7px;
+}
+.header-title h4 {
+  font-size: 14px;
+}
+.student-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.student-info p {
+  font-size: 13px;
+}
+.student-table {
+  display: flex;
+  gap: 10px;
+}
+.student-table .scholastic-area {
+  width: 70%;
+}
+.student-table .co-scholastic {
+  width: 30%;
+}
+
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+table th {
+  border-left: 2px solid #797878;
+  font-size: 12px;
+  padding: 5px;
+}
+
+table,
+td {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #797878;
+}
+table td {
+  padding: 3px;
+  font-size: 12px;
+  text-align: center;
+}
+td:first-child {
+  padding: 3px;
+  font-size: 14px;
+  text-align: left;
+  font-weight: 500;
+  width: 80%;
+}
+/* .scholastic-area table td:first-child {
+  width: 30%;
+} */
+td:nth-child(4) {
+  width: 10%;
+}
+/* td:nth-last-child(4) {
+  width: 70%;
+} */
+
+.established {
+  font-size: 14px;
+  display: block;
+  color: rgba(0, 0, 0, 0.479);
+}
+/* .scholarstic-area table th,
+.co-scholastic table th,
+.scholarstic-area table td,
+.co-scholastic table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+} */
+
+/* .scholarstic-area table th {
+  background-color: #f2f2f2;
+}
+
+.co-scholastic {
+  margin-top: 20px;
+} */
+
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+.signatures {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 20px; */
+}
+
+.signatures div {
+  text-align: center;
+}
+
+.signatures p {
+  /* margin: 10px 0; */
+  /* border-top: 1px solid #000; */
+  /* padding-top: 10px; */
+}

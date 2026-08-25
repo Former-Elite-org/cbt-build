@@ -1,0 +1,481 @@
+/* Enhanced Take Exam Styles with Security Features */
+.take-exam-container {
+    min-height: 100vh;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  /* Security Styles */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .no-select::selection {
+    background: transparent;
+  }
+  
+  .no-select::-moz-selection {
+    background: transparent;
+  }
+  
+  /* Tab Warning */
+  .tab-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #dc3545;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    z-index: 9999;
+    animation: pulse 1s infinite;
+  }
+  
+  .security-alert {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 1rem;
+  }
+  
+  /* Enhanced Calculator */
+  .calculator {
+    width: 320px;
+  }
+  
+  .calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .calc-shortcuts {
+    flex: 1;
+    text-align: center;
+    margin: 0 1rem;
+  }
+  
+  .calc-shortcuts small {
+    color: #6c757d;
+    font-size: 0.75rem;
+  }
+  
+  /* Enhanced Dictionary */
+  .dictionary {
+    width: 450px;
+    max-height: 600px;
+  }
+  
+  .dictionary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .dict-shortcuts {
+    flex: 1;
+    text-align: center;
+    margin: 0 1rem;
+  }
+  
+  .dict-shortcuts small {
+    color: #6c757d;
+    font-size: 0.75rem;
+  }
+  
+  .search-history {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  /* Enhanced Timer */
+  .countdown-timer .timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  /* Quick Selection Hints */
+  .quick-select-hint {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+  }
+  
+  .option-marker kbd {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    color: #495057;
+  }
+  
+  /* Success Modal */
+  .success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .success-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  
+  .success-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1.5rem;
+  }
+  
+  .success-title {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .success-message {
+    color: #6c757d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .success-animation {
+    margin: 2rem 0;
+  }
+  
+  /* Animated Checkmark */
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 3;
+    stroke: #28a745;
+    stroke-miterlimit: 10;
+    margin: 0 auto;
+    box-shadow: inset 0px 0px 0px #28a745;
+    animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+    position: relative;
+  }
+  
+  .checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    stroke: #28a745;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid #28a745;
+  }
+  
+  .checkmark-stem {
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    position: absolute;
+    top: 36px;
+    left: 28px;
+    width: 15px;
+    height: 3px;
+    background: #28a745;
+    transform: rotate(45deg);
+    transform-origin: left;
+    opacity: 0;
+  }
+  
+  .checkmark-kick {
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+    position: absolute;
+    top: 46px;
+    left: 35px;
+    width: 25px;
+    height: 3px;
+    background: #28a745;
+    transform: rotate(-45deg);
+    transform-origin: left;
+    opacity: 0;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scale {
+    0%,
+    100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 60px #28a745;
+    }
+  }
+  
+  .success-btn {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background: #007bff;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .success-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Enhanced Shortcuts Modal */
+  .shortcuts-list h5 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+  }
+  
+  /* Enhanced Question Display */
+  .question-text {
+    line-height: 1.7;
+    font-size: 1.1rem;
+  }
+  
+  .question-attachment {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    max-height: 400px;
+    object-fit: contain;
+  }
+  
+  /* Enhanced Options */
+  .option-label {
+    transition: all 0.2s ease;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .option-label:hover {
+    background: #f8f9ff;
+    border-color: #007bff;
+    transform: translateX(5px);
+  }
+  
+  .option-input:checked + .option-marker + .option-text {
+    font-weight: 600;
+  }
+  
+  /* Enhanced Navigation */
+  .nav-btn {
+    min-width: 120px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Enhanced Review Screen */
+  .review-summary {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+  }
+  
+  .summary-item {
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid #dee2e6;
+  }
+  
+  .summary-item:last-child {
+    border-right: none;
+  }
+  
+  .review-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+  }
+  
+  .review-item:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 0 -0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Enhanced Progress Bar */
+  .progress-section {
+    background: rgba(248, 249, 250, 0.8);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+  }
+  
+  /* Responsive Enhancements */
+  @media (max-width: 768px) {
+    .calculator {
+      width: 90vw;
+      max-width: 300px;
+    }
+  
+    .dictionary {
+      width: 90vw;
+      max-width: 400px;
+    }
+  
+    .success-card {
+      margin: 1rem;
+      padding: 2rem;
+    }
+  
+    .success-icon {
+      font-size: 3rem;
+    }
+  
+    .checkmark {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .tab-warning {
+      font-size: 0.9rem;
+      padding: 0.75rem;
+    }
+  
+    .quick-select-hint {
+      font-size: 0.8rem;
+    }
+  
+    .option-marker kbd {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.3rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .success-card {
+      padding: 1.5rem;
+    }
+  
+    .success-title {
+      font-size: 1.25rem;
+    }
+  
+    .success-message {
+      font-size: 0.9rem;
+    }
+  
+    .checkmark {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .calc-shortcuts,
+    .dict-shortcuts {
+      display: none;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .calculator-overlay,
+    .dictionary-overlay,
+    .success-overlay,
+    .tab-warning,
+    .security-alert {
+      display: none !important;
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .no-select {
+      background: #fff;
+      color: #000;
+    }
+  
+    .option-label {
+      border: 2px solid #000;
+    }
+  
+    .option-label:hover,
+    .option-label:has(.option-input:checked) {
+      background: #000;
+      color: #fff;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .checkmark,
+    .checkmark-circle,
+    .checkmark-stem,
+    .checkmark-kick {
+      animation: none;
+    }
+  
+    .success-card {
+      animation: none;
+    }
+  
+    .tab-warning {
+      animation: none;
+    }
+  }
+  

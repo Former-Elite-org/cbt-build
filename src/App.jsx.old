@@ -1,0 +1,50 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import AppIndex from "./routes/AppIndex";
+import { toast, ToastContainer } from "react-hot-toast";
+import "react-hot-toast/dist/ReactToastify.css";
+import AppNavigation from "./routes/AppNavigation";
+import { init } from "./redux/actions/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+function App() {
+  const {authenticated, user} = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Run initialization only if the user is not authenticated
+    if (!authenticated) {
+      dispatch(
+        init(
+          navigate,
+          () => {
+            if (location?.pathname.includes("login") || location?.pathname === "/") {
+              navigate(location?.pathname); // Redirect to dashboard
+            }
+          },
+          () => {
+            // toast.error("Authentication is required");
+            if (location?.pathname.includes("login")) {
+              navigate(location?.pathname); // Redirect to dashboard
+            }else{
+              navigate('/login'); // Redirect to login
+            }
+
+          }
+        )
+      );
+    }
+  }, [authenticated, dispatch, navigate]);
+
+  return (
+    <div>
+      <AppNavigation />
+      <AppIndex />
+      <ToastContainer />
+    </div>
+  );
+}
+
+export default App;

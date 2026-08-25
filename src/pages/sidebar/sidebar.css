@@ -1,0 +1,361 @@
+/* Elite CBT Sidebar Styles */
+:root {
+  --elite-red: #a51c30;
+  --elite-blue: #00356b;
+  --elite-red-light: rgba(165, 28, 48, 0.1);
+  --elite-blue-light: rgba(0, 53, 107, 0.1);
+  --elite-gradient: linear-gradient(135deg, var(--elite-red) 0%, var(--elite-blue) 100%);
+}
+
+/* Sidebar Base */
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background: #ffffff;
+  border-right: 1px solid #e9ecef;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar.close {
+  width: 80px;
+}
+
+.sidebar.mobile {
+  width: 280px;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.sidebar-header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--elite-gradient);
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.app-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--elite-blue);
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.close .app-name {
+  opacity: 0;
+  width: 0;
+}
+
+/* Toggle Button */
+.toggle {
+  font-size: 1rem;
+  color: var(--elite-blue);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: rgba(0, 53, 107, 0.1);
+}
+
+.toggle:hover {
+  background: var(--elite-blue-light);
+  transform: scale(1.1);
+}
+
+.toggle.rotated {
+  transform: rotate(180deg);
+}
+
+.mobile-close {
+  font-size: 1.2rem;
+  color: var(--elite-blue);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: rgba(0, 53, 107, 0.1);
+}
+
+.mobile-close:hover {
+  background: var(--elite-red-light);
+  color: var(--elite-red);
+}
+
+/* Menu Bar */
+.menu-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.menu {
+  flex: 1;
+}
+
+/* Menu Category */
+.menu-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6c757d;
+  padding: 1rem 1.5rem 0.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid #f1f3f4;
+}
+
+.menu-category:first-child {
+  margin-top: 0;
+  border-top: none;
+}
+
+.sidebar.close .menu-category {
+  display: none;
+}
+
+/* Menu Links */
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  margin: 0.25rem 0.75rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link a {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.nav-link a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--elite-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.nav-link:hover a::before,
+.nav-link.active a::before {
+  opacity: 1;
+}
+
+.nav-link:hover a,
+.nav-link.active a {
+  color: white;
+  transform: translateX(5px);
+}
+
+.nav-link .icon {
+  font-size: 1.2rem;
+  min-width: 24px;
+  transition: all 0.3s ease;
+}
+
+.nav-text {
+  margin-left: 1rem;
+  white-space: nowrap;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close .nav-text {
+  opacity: 0;
+  width: 0;
+  margin-left: 0;
+}
+
+.sidebar.close .nav-link a {
+  justify-content: center;
+  padding: 0.875rem 0.5rem;
+}
+
+/* Logout Link */
+.logout-link {
+  margin-top: auto;
+  border-top: 1px solid #e9ecef;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  padding-top: 1rem;
+}
+
+.logout-link a {
+  color: var(--elite-red);
+  font-weight: 600;
+}
+
+.logout-link a::before {
+  background: var(--elite-red);
+}
+
+.logout-link:hover a {
+  color: white;
+}
+
+/* Bottom Content */
+.bottom-content {
+  margin-top: auto;
+  padding: 1rem 0;
+}
+
+/* Scrollbar Styling */
+.menu-bar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu-bar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu-bar::-webkit-scrollbar-thumb {
+  background: rgba(0, 53, 107, 0.2);
+  border-radius: 2px;
+}
+
+.menu-bar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 53, 107, 0.4);
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 767.98px) {
+  .sidebar.mobile {
+    width: 280px;
+  }
+
+  .sidebar-header {
+    padding: 1rem;
+  }
+
+  .nav-link {
+    margin: 0.25rem 1rem;
+  }
+
+  .nav-link a {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .nav-link .icon {
+    font-size: 1.3rem;
+  }
+
+  .menu-category {
+    padding: 1rem 1.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar.close {
+    width: 70px;
+  }
+}
+
+/* Animation for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .nav-link a,
+  .toggle,
+  .mobile-close {
+    transition: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .sidebar {
+    border-right: 2px solid #000;
+  }
+
+  .nav-link a {
+    border: 1px solid transparent;
+  }
+
+  .nav-link:hover a,
+  .nav-link.active a {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+  }
+}
+
+/* Focus States for Accessibility */
+.nav-link a:focus,
+.toggle:focus,
+.mobile-close:focus {
+  outline: 2px solid var(--elite-blue);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,639 @@
+🔁 No version provided — auto-incrementing to v1.0.0.3
+📱 Version: 1.0.0.3 (code: 100003)
+   Web: https://elitecbt.com.ng
+   APK Repo: https://github.com/eliteedtech1-debug/cbt-apk
+🚀 Elite CBT Deployment v1.0.0.3
+====================================
+
+📋 Step 1: Verifying environment...
+✅ Frontend directory verified
+
+📋 Step 2: Updating version in package.json...
+  ⚠️  jq not found, skipping package.json version update
+
+📋 Step 3: Cleaning & building web app...
+
+up to date, audited 1818 packages in 26s
+
+288 packages are looking for funding
+  run `npm fund` for details
+
+64 vulnerabilities (11 low, 16 moderate, 34 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+npm warn allow-scripts 4 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   core-js@3.45.0 (install: (install scripts present))
+npm warn allow-scripts   core-js-pure@3.45.0 (install: (install scripts present))
+npm warn allow-scripts   esbuild@0.25.12 (install: (install scripts present))
+npm warn allow-scripts   fsevents@2.3.3 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+> examination-app@0.1.0 build
+> tsc && vite build
+
+src/App.tsx(9,19): error TS7016: Could not find a declaration file for module './redux/store'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/redux/store.js' implicitly has an 'any' type.
+src/components/layout/Sidebar.tsx(291,9): error TS6133: 'isTeacher' is declared but its value is never read.
+src/core/common/dataTable/DataFormtable.tsx(3,38): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/core/common/dataTable/DataFormtable.tsx(4,32): error TS2307: Cannot find module '../../data/interface' or its corresponding type declarations.
+src/core/common/dataTable/DataFormtable.tsx(9,3): error TS6133: 'setDataSource' is declared but its value is never read.
+src/core/common/dataTable/DataFormtable.tsx(13,22): error TS6133: 'setShowInputs' is declared but its value is never read.
+src/core/common/dataTable/DataFormtable.tsx(30,40): error TS7006: Parameter 'col' implicitly has an 'any' type.
+src/core/common/dataTable/DataFormtable.tsx(37,22): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/core/common/dataTable/index.tsx(2,36): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/core/common/dataTable/index.tsx(4,28): error TS2307: Cannot find module 'reactstrap' or its corresponding type declarations.
+src/core/common/dataTable/index.tsx(31,10): error TS6133: 'expandedRowKeys' is declared but its value is never read.
+src/core/common/dataTable/index.tsx(93,24): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/analysis/pages/AnalyticsPage.tsx(2,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/pages/AnalyticsPage.tsx(18,3): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/features/analysis/pages/AnalyticsPage.tsx(59,10): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/AnalyticsPage.tsx(396,36): error TS6133: 'i' is declared but its value is never read.
+src/features/analysis/pages/DiagnosticFeedbackPage.tsx(5,38): error TS6133: 'CardTitle' is declared but its value is never read.
+src/features/analysis/pages/ItemAnalysisPage.tsx(3,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/pages/ItemAnalysisPage.tsx(34,3): error TS6133: 'ClipboardList' is declared but its value is never read.
+src/features/analysis/pages/ItemAnalysisPage.tsx(71,10): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/ItemAnalysisPage.tsx(140,27): error TS2339: Property 'quality_distribution' does not exist on type '{}'.
+src/features/analysis/pages/ItemAnalysisPage.tsx(141,34): error TS2339: Property 'avg_difficulty' does not exist on type '{}'.
+src/features/analysis/pages/ItemAnalysisPage.tsx(142,37): error TS2339: Property 'avg_discrimination' does not exist on type '{}'.
+src/features/analysis/pages/ItemAnalysisPage.tsx(143,33): error TS2339: Property 'total_analyzed' does not exist on type '{}'.
+src/features/analysis/pages/ItemBankPage.tsx(57,54): error TS2353: Object literal may only specify known properties, and 'branch_id' does not exist in type 'ItemBankFilters'.
+src/features/analysis/pages/ReliabilityPage.tsx(2,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/pages/ReliabilityPage.tsx(53,10): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/ReportsPage.tsx(2,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/pages/ReportsPage.tsx(87,10): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/StandardsPage.tsx(2,1): error TS6133: 'useAuthStore' is declared but its value is never read.
+src/features/analysis/pages/StandardsPage.tsx(3,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/pages/StandardsPage.tsx(37,3): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/features/analysis/pages/StandardsPage.tsx(45,1): error TS6133: 'React' is declared but its value is never read.
+src/features/analysis/pages/StandardsPage.tsx(108,9): error TS6133: 'mappedSet' is declared but its value is never read.
+src/features/analysis/pages/StandardsPage.tsx(156,10): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/StandardsPage.tsx(188,14): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/StandardsPage.tsx(435,63): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/features/analysis/pages/TestBlueprintPage.tsx(3,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/pages/TestBlueprintPage.tsx(256,8): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/TestBlueprintPage.tsx(264,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/pages/TestBlueprintPage.tsx(273,8): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/analysis/pages/TestBlueprintPage.tsx(282,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/analyticsService.ts(1,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/analyticsService.ts(9,49): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/analyticsService.ts(9,72): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/analyticsService.ts(19,68): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/analyticsService.ts(19,91): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(1,44): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(15,19): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(15,42): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(21,30): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(21,53): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(27,39): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(27,62): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(33,41): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(33,64): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(44,26): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(44,49): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(59,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(59,59): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(65,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/blueprintService.ts(65,60): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(1,44): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(43,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(44,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(58,50): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(58,73): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(64,56): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(64,79): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(76,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(77,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(89,45): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/feedbackService.ts(89,68): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(1,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(15,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(16,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(28,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(29,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(41,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(42,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(54,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemAnalysisService.ts(55,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(1,44): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(23,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(23,66): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(29,30): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(29,53): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(44,26): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(44,49): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(50,44): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(50,67): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(59,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(59,59): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(65,37): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/itemBankService.ts(65,60): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(1,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(21,61): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(21,84): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(27,50): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(27,73): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(36,52): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/moderationService.ts(36,75): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/reliabilityService.ts(1,23): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/reliabilityService.ts(9,51): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/reliabilityService.ts(9,74): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(1,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(118,39): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(118,62): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(123,77): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(123,100): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(133,59): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/reportingService.ts(133,82): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(1,38): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(23,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(23,66): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(41,38): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(41,61): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(50,69): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(50,92): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(56,47): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(56,70): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(62,52): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/analysis/services/standardsService.ts(62,75): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/auth/components/AuthInitializer.tsx(32,19): error TS2345: Argument of type '{ user_id: string; username: string; email: string; user_type: string; first_name?: string | undefined; last_name?: string | undefined; phone?: string | undefined; school_id: string; branch_id?: string | undefined; school_location?: any; }' is not assignable to parameter of type 'User'.
+  Types of property 'user_type' are incompatible.
+    Type 'string' is not assignable to type 'UserRole'.
+src/features/auth/hooks/useAuth.ts(64,15): error TS2345: Argument of type '{ user_id: string; username: string; email: string; user_type: string; first_name?: string | undefined; last_name?: string | undefined; phone?: string | undefined; school_id: string; branch_id?: string | undefined; school_location?: any; }' is not assignable to parameter of type 'User'.
+  Types of property 'user_type' are incompatible.
+    Type 'string' is not assignable to type 'UserRole'.
+src/features/auth/hooks/useAuth.ts(73,57): error TS2339: Property 'first_login_completed' does not exist on type '{ user_id: string; username: string; email: string; user_type: string; first_name?: string | undefined; last_name?: string | undefined; phone?: string | undefined; school_id: string; branch_id?: string | undefined; school_location?: any; }'.
+src/features/auth/hooks/useAuth.ts(73,102): error TS2339: Property 'first_login_completed' does not exist on type '{ user_id: string; username: string; email: string; user_type: string; first_name?: string | undefined; last_name?: string | undefined; phone?: string | undefined; school_id: string; branch_id?: string | undefined; school_location?: any; }'.
+src/features/dashboard/pages/AdminDashboardPage.tsx(418,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/dashboard/pages/AdminDashboardPage.tsx(463,8): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/dashboard/pages/AdminDashboardPage.tsx(484,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/dashboard/pages/TeacherDashboardPage.tsx(337,8): error TS6133: 'React' is declared but its value is never read.
+src/features/dashboard/pages/TeacherDashboardPage.tsx(340,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/dashboard/pages/TeacherDashboardPage.tsx(520,19): error TS2322: Type '{ value: number; className: string; indicatorClassName: string; }' is not assignable to type 'IntrinsicAttributes & Omit<ProgressProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<HTMLDivElement>'.
+  Property 'indicatorClassName' does not exist on type 'IntrinsicAttributes & Omit<ProgressProps & RefAttributes<HTMLDivElement>, "ref"> & RefAttributes<HTMLDivElement>'.
+src/features/exam-taking/components/Calculator.tsx(4,40): error TS6133: 'X' is declared but its value is never read.
+src/features/exam-taking/components/ExamTimer.tsx(5,1): error TS6133: 'formatDuration' is declared but its value is never read.
+src/features/exam-taking/components/QuestionDisplay.tsx(9,24): error TS6133: 'Circle' is declared but its value is never read.
+src/features/exam-taking/components/QuestionDisplay.tsx(34,9): error TS6133: 'handleMultipleAnswerChange' is declared but its value is never read.
+src/features/exam-taking/components/QuestionDisplay.tsx(124,10): error TS2367: This comparison appears to be unintentional because the types 'QuestionType' and '"Essay"' have no overlap.
+src/features/exam-taking/components/QuestionDisplay.tsx(141,10): error TS2367: This comparison appears to be unintentional because the types 'QuestionType' and '"Fill in the Blanks"' have no overlap.
+src/features/exam-taking/hooks/useExamTaking.ts(5,10): error TS6133: 'ExamSession' is declared but its value is never read.
+src/features/exam-taking/hooks/useExamTaking.ts(28,27): error TS2339: Property 'randomize_options' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(88,24): error TS2339: Property 'instructions' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(88,46): error TS2339: Property 'instructions' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(126,32): error TS2339: Property 'instructions' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(126,53): error TS2339: Property 'instructions' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(140,23): error TS2339: Property 'instructions' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(327,23): error TS2339: Property 'allow_calculator' does not exist on type 'Exam'.
+src/features/exam-taking/pages/TakeExamPage.tsx(337,23): error TS2339: Property 'allow_dictionary' does not exist on type 'Exam'.
+src/features/exams/components/AIGenerator/AIGeneratorModal.tsx(414,1): error TS6133: 'Input' is declared but its value is never read.
+src/features/exams/components/AIGenerator/AIGeneratorModal.tsx(415,1): error TS6133: 'Label' is declared but its value is never read.
+src/features/exams/components/AIGenerator/AIGeneratorModal.tsx(418,10): error TS6133: 'Plus' is declared but its value is never read.
+src/features/exams/components/AIGenerator/AIGeneratorModal.tsx(421,26): error TS6133: 'CardHeader' is declared but its value is never read.
+src/features/exams/components/AIGenerator/AIGeneratorModal.tsx(421,38): error TS6133: 'CardTitle' is declared but its value is never read.
+src/features/exams/components/AIGenerator/AIGeneratorModal.tsx(560,128): error TS2367: This comparison appears to be unintentional because the types '"generate" | "review"' and '"upload"' have no overlap.
+src/features/exams/components/AIGenerator/DocumentUpload.tsx(214,28): error TS6133: 'useEffect' is declared but its value is never read.
+src/features/exams/components/ExamPreviewModal.tsx(120,51): error TS2339: Property 'option_text' does not exist on type 'QuestionOption'.
+src/features/exams/components/ExamPreviewModal.tsx(169,41): error TS2339: Property 'option_text' does not exist on type 'QuestionOption'.
+src/features/exams/components/QuestionForm.tsx(630,31): error TS2339: Property 'option_order' does not exist on type 'QuestionOption'.
+src/features/exams/components/QuestionForm.tsx(630,64): error TS2339: Property 'option_order' does not exist on type 'QuestionOption'.
+src/features/exams/components/QuestionForm.tsx(631,31): error TS2339: Property 'option_label' does not exist on type 'QuestionOption'.
+src/features/exams/components/QuestionForm.tsx(631,77): error TS2339: Property 'option_order' does not exist on type 'QuestionOption'.
+src/features/exams/components/QuestionForm.tsx(631,110): error TS2339: Property 'option_order' does not exist on type 'QuestionOption'.
+src/features/exams/hooks/useExams.ts(29,17): error TS6133: 'response' is declared but its value is never read.
+src/features/exams/hooks/useExams.ts(45,17): error TS6133: 'response' is declared but its value is never read.
+src/features/exams/hooks/useQuestions.ts(20,17): error TS6133: 'response' is declared but its value is never read.
+src/features/exams/hooks/useQuestions.ts(35,17): error TS6133: 'response' is declared but its value is never read.
+src/features/exams/hooks/useQuestions.ts(58,17): error TS6133: 'response' is declared but its value is never read.
+src/features/exams/hooks/useQuestions.ts(58,50): error TS6133: 'variables' is declared but its value is never read.
+src/features/exams/pages/CreateExamPage.tsx(720,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/exams/pages/CreateExamPage.tsx(850,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/pages/CreateExamPage.tsx(858,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/pages/CreateExamPage.tsx(886,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/pages/CreateExamPage.tsx(894,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/pages/CreateExamPage.tsx(956,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/pages/CreateExamPage.tsx(966,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/pages/ExamsManagerPage.tsx(595,20): error TS6133: 'useCallback' is declared but its value is never read.
+src/features/exams/pages/ExamsManagerPage.tsx(595,33): error TS6133: 'useEffect' is declared but its value is never read.
+src/features/exams/pages/ExamsManagerPage.tsx(598,26): error TS6133: 'CardHeader' is declared but its value is never read.
+src/features/exams/pages/ExamsManagerPage.tsx(598,38): error TS6133: 'CardTitle' is declared but its value is never read.
+src/features/exams/pages/ExamsManagerPage.tsx(605,16): error TS2459: Module '"../types/exam.types"' declares 'ExamStatus' locally, but it is not exported.
+src/features/exams/pages/ExamsManagerPage.tsx(715,71): error TS7053: Element implicitly has an 'any' type because expression of type 'ExamStatus' can't be used to index type '{ Pending: string; Approved: string; Rejected: string; Released: string; }'.
+src/features/exams/pages/ExamsManagerPage.tsx(748,11): error TS2353: Object literal may only specify known properties, and 'school_id' does not exist in type 'UpdateExamDto'.
+src/features/exams/pages/ManageQuestionsPage.tsx(426,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/exams/pages/ManageQuestionsPage.tsx(433,26): error TS6133: 'CardHeader' is declared but its value is never read.
+src/features/exams/pages/ManageQuestionsPage.tsx(433,38): error TS6133: 'CardTitle' is declared but its value is never read.
+src/features/exams/pages/ManageQuestionsPage.tsx(442,3): error TS6133: 'CheckCircle' is declared but its value is never read.
+src/features/exams/pages/StudentExamListPage.tsx(718,22): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/exams/pages/StudentExamListPage.tsx(737,3): error TS6133: 'User' is declared but its value is never read.
+src/features/exams/pages/TeachersExamPage.tsx(704,35): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/exams/pages/TeachersExamPage.tsx(721,3): error TS6133: 'XCircle' is declared but its value is never read.
+src/features/exams/pages/TeachersExamPage.tsx(781,10): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/features/exams/pages/TeachersExamPage.tsx(795,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/pages/TeachersExamPage.tsx(831,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/pages/TeachersExamPage.tsx(846,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/pages/TeachersExamPage.tsx(873,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/pages/TeachersExamPage.tsx(887,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(1,44): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(23,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(30,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(41,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(64,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(79,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(86,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(98,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(105,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(120,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(127,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(139,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/examService.ts(146,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(1,44): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(54,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(65,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(93,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(99,13): error TS2322: Type 'Question | null' is not assignable to type 'Question'.
+  Type 'null' is not assignable to type 'Question'.
+src/features/exams/services/questionService.ts(103,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(134,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(145,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(172,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(178,13): error TS2322: Type 'Question | null' is not assignable to type 'Question'.
+  Type 'null' is not assignable to type 'Question'.
+src/features/exams/services/questionService.ts(182,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(194,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(201,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(212,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(213,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(231,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/exams/services/questionService.ts(234,43): error TS2322: Type 'Question | null' is not assignable to type 'Question'.
+  Type 'null' is not assignable to type 'Question'.
+src/features/exams/services/questionService.ts(236,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/results/pages/AdminResultsPage.tsx(491,3): error TS6133: 'Calendar' is declared but its value is never read.
+src/features/results/pages/StudentResultsPage.tsx(165,1): error TS6192: All imports in import declaration are unused.
+src/features/results/pages/StudentResultsPage.tsx(261,31): error TS2339: Property 'result_id' does not exist on type 'ExamResult'.
+src/features/results/pages/TeacherResultsPage.tsx(452,1): error TS6192: All imports in import declaration are unused.
+src/features/results/pages/TeacherResultsPage.tsx(464,3): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/features/results/pages/TeacherResultsPage.tsx(465,3): error TS6133: 'Users' is declared but its value is never read.
+src/features/results/pages/TeacherResultsPage.tsx(466,3): error TS6133: 'CheckCircle2' is declared but its value is never read.
+src/features/results/pages/TeacherResultsPage.tsx(467,3): error TS6133: 'XCircle' is declared but its value is never read.
+src/features/results/pages/TeacherResultsPage.tsx(479,9): error TS6133: 'navigate' is declared but its value is never read.
+src/features/results/pages/TeacherResultsPage.tsx(490,5): error TS2353: Object literal may only specify known properties, and 'teacher_id' does not exist in type 'ExamQueryParams'.
+src/features/results/pages/TeacherResultsPage.tsx(811,38): error TS2304: Cannot find name 'handleViewDetails'.
+src/features/results/pages/ViewResultPage.tsx(279,1): error TS6192: All imports in import declaration are unused.
+src/features/results/pages/ViewResultPage.tsx(287,71): error TS6133: 'Award' is declared but its value is never read.
+src/features/results/pages/ViewResultPage.tsx(287,78): error TS6133: 'ShieldCheck' is declared but its value is never read.
+src/features/results/pages/ViewResultPage.tsx(287,91): error TS6133: 'FileText' is declared but its value is never read.
+src/features/results/services/resultService.ts(1,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/features/results/services/resultService.ts(22,5): error TS2322: Type '{ id: any; exam_id: any; title: any; assessment_type: any; subject_name: any; class_name: any; commence_date: any; start_time: any; end_time: any; } | undefined' is not assignable to type 'Exam | undefined'.
+  Type '{ id: any; exam_id: any; title: any; assessment_type: any; subject_name: any; class_name: any; commence_date: any; start_time: any; end_time: any; }' is missing the following properties from type 'Exam': duration, status, subject_id, class_id, and 2 more.
+src/features/results/services/resultService.ts(59,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/results/services/resultService.ts(68,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/results/services/resultService.ts(82,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/results/services/resultService.ts(98,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/results/services/resultService.ts(114,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/features/results/services/resultService.ts(123,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/features/results/types/result.types.ts(3,1): error TS6133: 'Question' is declared but its value is never read.
+src/lib/hooks/useLocalStorage.ts(1,20): error TS6133: 'useEffect' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(14,3): error TS6133: 'Settings' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(35,3): error TS6133: 'DialogTrigger' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(64,10): error TS6133: 'selectedExam' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(64,24): error TS6133: 'setSelectedExam' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(65,10): error TS6133: 'viewMode' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(65,20): error TS6133: 'setViewMode' is declared but its value is never read.
+src/pages/dashboard/ExamManagement.tsx(67,11): error TS6133: 'user' is declared but its value is never read.
+src/pages/dashboard/ModernTeacherDashboard.tsx(15,3): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/pages/dashboard/ModernTeacherDashboard.tsx(24,22): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/dashboard/ModernTeacherDashboard.tsx(276,44): error TS6133: 'index' is declared but its value is never read.
+src/pages/dashboard/StudentResults.tsx(4,3): error TS6133: 'BarChart3' is declared but its value is never read.
+src/pages/dashboard/StudentResults.tsx(11,3): error TS6133: 'Filter' is declared but its value is never read.
+src/pages/dashboard/StudentResults.tsx(81,11): error TS6133: 'user' is declared but its value is never read.
+src/pages/dashboard/StudentResults.tsx(486,35): error TS6133: 'index' is declared but its value is never read.
+src/pages/dashboard/TeacherNavigation.tsx(335,25): error TS6133: 'setNotifications' is declared but its value is never read.
+src/pages/dashboard/TeacherNavigation.tsx(340,17): error TS2339: Property 'logout' does not exist on type 'AuthState'.
+src/pages/dashboard/TeacherNavigation.tsx(465,45): error TS2339: Property 'avatar' does not exist on type 'User'.
+src/pages/dashboard/TeacherNavigation.tsx(650,49): error TS2339: Property 'avatar' does not exist on type 'User'.
+src/pages/Exams/MarkAssignments.tsx(9,8): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/pages/Exams/MarkAssignments.tsx(13,19): error TS2307: Cannot find module 'dayjs' or its corresponding type declarations.
+src/pages/Exams/MarkAssignments.tsx(14,33): error TS7016: Could not find a declaration file for module './MarkAssignmentModal'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/pages/Exams/MarkAssignmentModal.jsx' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(16,44): error TS7016: Could not find a declaration file for module './UpdateAssignmentQuestionsTable'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/pages/Exams/UpdateAssignmentQuestionsTable.jsx' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(17,19): error TS2307: Cannot find module '../../../core/common/dataTable/index' or its corresponding type declarations.
+src/pages/Exams/MarkAssignments.tsx(18,39): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(97,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(102,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(114,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(119,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(130,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(135,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(142,31): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(146,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(151,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(159,33): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: any, replacer?: ((this: any, key: string, value: any) => any) | undefined, space?: string | number | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type '(this: any, key: string, value: any) => any'.
+  Overload 2 of 2, '(value: any, replacer?: (string | number)[] | null | undefined, space?: string | number | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type '(string | number)[]'.
+src/pages/Exams/MarkAssignments.tsx(161,33): error TS7006: Parameter 'val' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(166,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(174,8): error TS6133: 'err' is declared but its value is never read.
+src/pages/Exams/MarkAssignments.tsx(174,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(200,35): error TS7006: Parameter 'assignment' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(200,47): error TS7006: Parameter 'question' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(233,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(245,29): error TS7006: Parameter 'assignments' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(264,16): error TS7006: Parameter '_' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(264,19): error TS7006: Parameter '__' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(264,23): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(296,16): error TS6133: 'text' is declared but its value is never read.
+src/pages/Exams/MarkAssignments.tsx(302,16): error TS6133: 'text' is declared but its value is never read.
+src/pages/Exams/MarkAssignments.tsx(312,16): error TS7006: Parameter '_' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(312,19): error TS7006: Parameter 'record' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(374,28): error TS7006: Parameter 'text' implicitly has an 'any' type.
+src/pages/Exams/MarkAssignments.tsx(378,28): error TS6133: 'q' is declared but its value is never read.
+src/pages/Exams/MarkAssignments.tsx(378,28): error TS7006: Parameter 'q' implicitly has an 'any' type.
+src/pages/school-Setup/academicYear.tsx(2,1): error TS6133: 'Table' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(2,19): error TS2307: Cannot find module '../../../core/common/dataTable/index' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(3,1): error TS6133: 'PredefinedDateRanges' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(3,34): error TS2307: Cannot find module '../../../core/common/datePicker' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(6,3): error TS6133: 'activeList' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(7,8): error TS2307: Cannot find module '../../../core/common/selectoption/selectoption' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(8,38): error TS2307: Cannot find module '../../../core/common/commonSelect' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(10,1): error TS6133: 'TooltipOption' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(10,27): error TS2307: Cannot find module '../../../core/common/tooltipOption' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(11,28): error TS2307: Cannot find module '../../router/all_routes' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(12,29): error TS2307: Cannot find module '../../Utils/Helper' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(14,1): error TS6192: All imports in import declaration are unused.
+src/pages/school-Setup/academicYear.tsx(14,47): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(17,27): error TS2307: Cannot find module '../../../redux/reducers' or its corresponding type declarations.
+src/pages/school-Setup/academicYear.tsx(58,10): error TS6133: 'loading' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(58,19): error TS6133: 'setLoading' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(60,9): error TS6133: 'handleChange' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(64,9): error TS6133: 'navigate' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(65,10): error TS6133: 'new_data' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(65,20): error TS6133: 'setNewData' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(66,10): error TS6133: 'sections' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(66,20): error TS6133: 'setSections' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(214,14): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/academicYear.tsx(221,14): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/academicYear.tsx(317,9): error TS6133: 'routes' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(319,9): error TS6133: 'handleApplyClick' is declared but its value is never read.
+src/pages/school-Setup/academicYear.tsx(364,16): error TS6133: 'text' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(1,41): error TS6133: 'useRef' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(2,19): error TS2307: Cannot find module '../../../core/common/dataTable/index' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(3,1): error TS6133: 'PredefinedDateRanges' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(3,34): error TS2307: Cannot find module '../../../core/common/datePicker' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(4,1): error TS6192: All imports in import declaration are unused.
+src/pages/school-Setup/Branches.tsx(7,8): error TS2307: Cannot find module '../../../core/common/selectoption/selectoption' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(8,1): error TS6192: All imports in import declaration are unused.
+src/pages/school-Setup/Branches.tsx(8,38): error TS2307: Cannot find module '../../../core/common/commonSelect' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(10,1): error TS6133: 'TooltipOption' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(10,27): error TS2307: Cannot find module '../../../core/common/tooltipOption' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(11,1): error TS6133: 'all_routes' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(11,28): error TS2307: Cannot find module '../../router/all_routes' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(12,29): error TS2307: Cannot find module '../../Utils/Helper' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(14,1): error TS6192: All imports in import declaration are unused.
+src/pages/school-Setup/Branches.tsx(14,47): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(15,1): error TS6133: 'moment' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(17,27): error TS2307: Cannot find module '../../../redux/reducers' or its corresponding type declarations.
+src/pages/school-Setup/Branches.tsx(38,10): error TS6133: 'loading' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(38,19): error TS6133: 'setLoading' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(43,9): error TS6133: 'handleChange' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(47,9): error TS6133: 'navigate' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(49,11): error TS6133: 'school' is declared but its value is never read.
+src/pages/school-Setup/Branches.tsx(67,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/Branches.tsx(75,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/Branches.tsx(133,16): error TS6133: 'text' is declared but its value is never read.
+src/pages/school-Setup/ClassesManager.tsx(859,1): error TS6133: 'Skeleton' is declared but its value is never read.
+src/pages/school-Setup/ClassesManager.tsx(872,44): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(923,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(933,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(993,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1003,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1029,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1039,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1077,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1088,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1103,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1111,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1125,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ClassesManager.tsx(1133,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(4,1): error TS6192: All imports in import declaration are unused.
+src/pages/school-Setup/ExamGradeSetup.tsx(4,79): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+src/pages/school-Setup/ExamGradeSetup.tsx(7,1): error TS6192: All imports in import declaration are unused.
+src/pages/school-Setup/ExamGradeSetup.tsx(10,54): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(13,7): error TS6133: 'Option' is declared but its value is never read.
+src/pages/school-Setup/ExamGradeSetup.tsx(13,9): error TS2339: Property 'Option' does not exist on type 'FC<SelectProps>'.
+src/pages/school-Setup/ExamGradeSetup.tsx(34,10): error TS6133: 'selectedRecord' is declared but its value is never read.
+src/pages/school-Setup/ExamGradeSetup.tsx(35,26): error TS2552: Cannot find name 'Form'. Did you mean 'form'?
+src/pages/school-Setup/ExamGradeSetup.tsx(39,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(51,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(56,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(71,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(79,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(208,13): error TS2322: Type '"primary"' is not assignable to type '"button" | "submit" | "reset" | undefined'.
+src/pages/school-Setup/ExamGradeSetup.tsx(237,10): error TS2304: Cannot find name 'Modal'.
+src/pages/school-Setup/ExamGradeSetup.tsx(243,12): error TS2552: Cannot find name 'Form'. Did you mean 'form'?
+src/pages/school-Setup/ExamGradeSetup.tsx(249,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(251,17): error TS2322: Type '{ showSearch: true; placeholder: string; optionFilterProp: string; options: { label: any; value: any; }[]; onChange: (value: any) => void; }' is not assignable to type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+  Property 'showSearch' does not exist on type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+src/pages/school-Setup/ExamGradeSetup.tsx(258,28): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(262,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(264,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(275,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(277,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(288,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(290,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(296,17): error TS2322: Type '{ showSearch: true; placeholder: string; optionFilterProp: string; options: any; onChange: (value: any) => void; }' is not assignable to type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+  Property 'showSearch' does not exist on type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+src/pages/school-Setup/ExamGradeSetup.tsx(300,28): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(304,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(306,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(316,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(318,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(324,17): error TS2322: Type '{ showSearch: true; placeholder: string; optionFilterProp: string; options: any; onChange: (value: any) => void; }' is not assignable to type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+  Property 'showSearch' does not exist on type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+src/pages/school-Setup/ExamGradeSetup.tsx(328,28): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(332,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(335,23): error TS2322: Type '{ children: string; htmlType: string; onClick: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'htmlType' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/pages/school-Setup/ExamGradeSetup.tsx(338,23): error TS2322: Type '"primary"' is not assignable to type '"button" | "submit" | "reset" | undefined'.
+src/pages/school-Setup/ExamGradeSetup.tsx(342,13): error TS2552: Cannot find name 'Form'. Did you mean 'form'?
+src/pages/school-Setup/ExamGradeSetup.tsx(343,11): error TS2304: Cannot find name 'Modal'.
+src/pages/school-Setup/ExamGradeSetup.tsx(346,10): error TS2304: Cannot find name 'Modal'.
+src/pages/school-Setup/ExamGradeSetup.tsx(352,12): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(358,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(368,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(370,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(380,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(382,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(392,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(394,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(404,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(406,14): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(412,17): error TS2322: Type '{ showSearch: true; placeholder: string; optionFilterProp: string; options: any; onChange: (value: any) => void; }' is not assignable to type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+  Property 'showSearch' does not exist on type 'IntrinsicAttributes & SelectSharedProps & { value?: string | undefined; defaultValue?: string | undefined; onValueChange?(value: string): void; }'.
+src/pages/school-Setup/ExamGradeSetup.tsx(416,28): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/pages/school-Setup/ExamGradeSetup.tsx(420,15): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(423,23): error TS2322: Type '{ children: string; htmlType: string; onClick: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'htmlType' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/pages/school-Setup/ExamGradeSetup.tsx(426,23): error TS2322: Type '"primary"' is not assignable to type '"button" | "submit" | "reset" | undefined'.
+src/pages/school-Setup/ExamGradeSetup.tsx(430,13): error TS2304: Cannot find name 'Form'.
+src/pages/school-Setup/ExamGradeSetup.tsx(431,11): error TS2304: Cannot find name 'Modal'.
+src/pages/school-Setup/ExamGradeSetup.tsx(434,10): error TS2304: Cannot find name 'Modal'.
+src/pages/school-Setup/ExamGradeSetup.tsx(442,34): error TS2322: Type '{ children: string; key: string; danger: true; onClick: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'danger' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/pages/school-Setup/ExamGradeSetup.tsx(448,11): error TS2304: Cannot find name 'Modal'.
+src/pages/school-Setup/SchoolTermSetup.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/school-Setup/SchoolTermSetup.tsx(3,2): error TS6133: 'Table' is declared but its value is never read.
+src/pages/school-Setup/SchoolTermSetup.tsx(13,8): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/pages/school-Setup/SchoolTermSetup.tsx(15,29): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(27,9): error TS6133: 'selectedTerm' is declared but its value is never read.
+src/pages/school-Setup/SchoolTermSetup.tsx(33,5): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(40,5): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(52,25): error TS7006: Parameter 'record' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(74,31): error TS7006: Parameter 'values' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(86,6): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(95,6): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(103,30): error TS7006: Parameter 'values' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(113,5): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(122,5): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(131,34): error TS7006: Parameter 'values' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(142,6): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(151,6): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(170,13): error TS7006: Parameter '_' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(170,16): error TS7006: Parameter '__' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(170,20): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(186,13): error TS7006: Parameter 'text' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(192,13): error TS7006: Parameter 'text' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(198,13): error TS7006: Parameter 'status' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(209,13): error TS7006: Parameter '_' implicitly has an 'any' type.
+src/pages/school-Setup/SchoolTermSetup.tsx(209,16): error TS7006: Parameter 'record' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(752,44): error TS6133: 'useMemo' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(757,1): error TS6133: 'Skeleton' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(758,1): error TS6133: 'Label' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(759,1): error TS6133: 'Input' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(769,3): error TS6133: 'XCircle' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(771,3): error TS6133: 'Layers' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(772,3): error TS6133: 'Wand2' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(773,3): error TS6133: 'Grid' is declared but its value is never read.
+src/pages/school-Setup/SectionManager.tsx(775,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(857,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(861,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(873,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(876,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(944,51): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(944,74): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(961,47): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SectionManager.tsx(961,70): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1357,1): error TS6133: 'Skeleton' is declared but its value is never read.
+src/pages/school-Setup/SubjectsManager.tsx(1361,3): error TS6133: 'Edit' is declared but its value is never read.
+src/pages/school-Setup/SubjectsManager.tsx(1362,3): error TS6133: 'Trash2' is declared but its value is never read.
+src/pages/school-Setup/SubjectsManager.tsx(1372,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1507,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1526,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1542,10): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1550,10): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1660,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1671,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1723,14): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1742,14): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1799,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1807,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1830,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/school-Setup/SubjectsManager.tsx(1838,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(396,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(404,3): error TS6133: 'DialogFooter' is declared but its value is never read.
+src/pages/students/AddStudentModal.tsx(458,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(465,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(483,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(506,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(577,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/AddStudentModal.tsx(584,8): error TS6133: 'err' is declared but its value is never read.
+src/pages/students/AddStudentModal.tsx(584,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/BulkStudentUploadModal.tsx(4,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/students/BulkStudentUploadModal.tsx(11,3): error TS6133: 'DialogHeader' is declared but its value is never read.
+src/pages/students/BulkStudentUploadModal.tsx(12,3): error TS6133: 'DialogTitle' is declared but its value is never read.
+src/pages/students/BulkUploadStudents.tsx(156,23): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/students/BulkUploadStudents.tsx(223,53): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(775,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/students/StudentList.tsx(776,1): error TS6133: 'XLSX' is declared but its value is never read.
+src/pages/students/StudentList.tsx(778,29): error TS7016: Could not find a declaration file for module '@/Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(780,26): error TS6133: 'CardHeader' is declared but its value is never read.
+src/pages/students/StudentList.tsx(780,38): error TS6133: 'CardTitle' is declared but its value is never read.
+src/pages/students/StudentList.tsx(785,1): error TS6133: 'Skeleton' is declared but its value is never read.
+src/pages/students/StudentList.tsx(790,3): error TS6133: 'Download' is declared but its value is never read.
+src/pages/students/StudentList.tsx(802,3): error TS6133: 'ChevronDown' is declared but its value is never read.
+src/pages/students/StudentList.tsx(803,3): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/pages/students/StudentList.tsx(804,3): error TS6133: 'X' is declared but its value is never read.
+src/pages/students/StudentList.tsx(805,3): error TS6133: 'Check' is declared but its value is never read.
+src/pages/students/StudentList.tsx(806,3): error TS6133: 'CheckCircle2' is declared but its value is never read.
+src/pages/students/StudentList.tsx(807,3): error TS6133: 'Plus' is declared but its value is never read.
+src/pages/students/StudentList.tsx(808,3): error TS6133: 'School' is declared but its value is never read.
+src/pages/students/StudentList.tsx(855,68): error TS6133: 'storeClasses' is declared but its value is never read.
+src/pages/students/StudentList.tsx(883,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(890,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(912,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(923,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(951,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(961,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(1048,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(1060,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(1083,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(1091,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/students/StudentList.tsx(1342,60): error TS2339: Property 'id' does not exist on type 'Student'.
+src/pages/students/StudentList.tsx(1434,62): error TS2339: Property 'id' does not exist on type 'Student'.
+src/pages/teachers/BulkUpload.tsx(5,23): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/teachers/BulkUpload.tsx(9,1): error TS6192: All imports in import declaration are unused.
+src/pages/teachers/BulkUpload.tsx(10,33): error TS6133: 'DialogHeader' is declared but its value is never read.
+src/pages/teachers/BulkUpload.tsx(10,47): error TS6133: 'DialogTitle' is declared but its value is never read.
+src/pages/teachers/BulkUpload.tsx(21,7): error TS6133: 'STAFF_TYPES' is declared but its value is never read.
+src/pages/teachers/BulkUpload.tsx(22,7): error TS6133: 'STAFF_ROLES' is declared but its value is never read.
+src/pages/teachers/CreateTeacherModal.tsx(3,23): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/teachers/EditTeacher.tsx(361,35): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/teachers/EditTeacher.tsx(367,3): error TS6133: 'DialogFooter' is declared but its value is never read.
+src/pages/teachers/EditTeacher.tsx(494,33): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/teachers/EditTeacher.tsx(501,9): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/teachers/TeacherForm.tsx(709,36): error TS6133: 'useEffect' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(716,41): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/teachers/TeacherForm.tsx(717,16): error TS6133: 'CardContent' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(717,29): error TS6133: 'CardHeader' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(717,41): error TS6133: 'CardTitle' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(728,21): error TS6133: 'Save' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(728,42): error TS6133: 'RefreshCw' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(728,53): error TS6133: 'Eye' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(755,42): error TS6133: 'errors' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(842,33): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/teachers/TeacherForm.tsx(845,9): error TS6133: 'err' is declared but its value is never read.
+src/pages/teachers/TeacherForm.tsx(845,9): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(500,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/teachers/TeacherFormModal.tsx(503,8): error TS2307: Cannot find module 'antd' or its corresponding type declarations.
+src/pages/teachers/TeacherFormModal.tsx(504,23): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(507,37): error TS2307: Cannot find module '@ant-design/icons' or its corresponding type declarations.
+src/pages/teachers/TeacherFormModal.tsx(592,35): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(682,92): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(687,152): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(695,92): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(717,92): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(722,152): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/teachers/TeacherFormModal.tsx(730,86): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/teachers/TeacherList.tsx(445,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/teachers/TeacherList.tsx(447,28): error TS7016: Could not find a declaration file for module '../../Helper'. '/Users/ishaqibrahim/Downloads/apps/elite/elite-cbt/src/Helper.jsx' implicitly has an 'any' type.
+src/pages/teachers/TeacherList.tsx(449,29): error TS6133: 'CardHeader' is declared but its value is never read.
+src/pages/teachers/TeacherList.tsx(449,41): error TS6133: 'CardTitle' is declared but its value is never read.
+src/pages/teachers/TeacherList.tsx(460,1): error TS6192: All imports in import declaration are unused.
+src/pages/teachers/TeacherList.tsx(476,3): error TS6133: 'SlidersHorizontal' is declared but its value is never read.
+src/pages/teachers/TeacherList.tsx(478,1): error TS6133: 'EditTeacherForm' is declared but its value is never read.
+src/pages/teachers/TeacherList.tsx(503,8): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/pages/teachers/TeacherList.tsx(511,8): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/routes/index.tsx(31,1): error TS6133: 'SchoolTermSetup' is declared but its value is never read.
+src/routes/index.tsx(32,1): error TS6133: 'ExamGradeSetup' is declared but its value is never read.
+src/routes/public.tsx(3,1): error TS6133: 'useEffect' is declared but its value is never read.

@@ -1,0 +1,364 @@
+/* Elite CBT Login Styles with Brand Colors */
+:root {
+  --elite-red: #a51c30;
+  --elite-blue: #00356b;
+  --elite-red-light: rgba(165, 28, 48, 0.1);
+  --elite-blue-light: rgba(0, 53, 107, 0.1);
+  --elite-red-dark: #8a1729;
+  --elite-blue-dark: #002a54;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--elite-blue) 0%, var(--elite-red) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.login-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.elite-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.elite-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--elite-red) 0%, var(--elite-blue) 100%);
+}
+
+.elite-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.logo-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.school-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 0 4px var(--elite-red-light);
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.school-logo:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 4px var(--elite-blue-light);
+}
+
+.brand-section {
+  margin-bottom: 2rem;
+}
+
+.elite-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  /* background: linear-gradient(135deg, var(--elite-red) 0%, var(--elite-blue) 100%); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.elite-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.elite-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--elite-red) 0%, var(--elite-blue) 100%);
+  border-radius: 1px;
+}
+
+.login-type-toggle {
+  margin-bottom: 2rem;
+}
+
+.login-type-btn {
+  border-radius: 16px;
+  font-weight: 700;
+  padding:  0.6rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-type-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.login-type-btn:hover::before {
+  left: 100%;
+}
+
+.login-type-btn:not(.btn-primary) {
+  background: var(--elite-red-light);
+  border-color: rgba(165, 28, 48, 0.2);
+  color: var(--elite-red);
+}
+
+.login-type-btn:not(.btn-primary):hover {
+  background: rgba(165, 28, 48, 0.2);
+  border-color: var(--elite-red);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(165, 28, 48, 0.2);
+}
+
+.login-type-btn.btn-primary {
+  background: linear-gradient(135deg, var(--elite-red) 0%, var(--elite-blue) 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 10px 30px rgba(165, 28, 48, 0.3);
+}
+
+.login-type-btn.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(165, 28, 48, 0.4);
+}
+
+.input-group-modern {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--elite-blue);
+  z-index: 10;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control-modern {
+  border: 2px solid rgba(0, 53, 107, 0.1);
+  border-radius: 16px;
+  padding: 0.6rem 0.6rem  0.6rem 3.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.form-control-modern:focus {
+  border-color: var(--elite-blue);
+  box-shadow: 0 0 0 0.2rem rgba(0, 53, 107, 0.15), 0 8px 25px rgba(0, 53, 107, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+}
+
+.form-control-modern:focus + .input-icon {
+  color: var(--elite-red);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.form-control-modern::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.remember-me-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.remember-me-label:hover {
+  color: var(--elite-blue);
+}
+
+.forgot-password-link {
+  color: var(--elite-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.forgot-password-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--elite-red);
+  transition: width 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: var(--elite-red);
+}
+
+.forgot-password-link:hover::after {
+  width: 100%;
+}
+
+.login-submit-btn {
+  background: linear-gradient(135deg, var(--elite-red) 0%, var(--elite-blue) 100%);
+  border: none;
+  border-radius: 16px;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 12px 35px rgba(165, 28, 48, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.login-submit-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(165, 28, 48, 0.4);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.partner-brands {
+  text-align: center;
+  padding-top: 0rem;
+}
+
+.partner-link {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.partner-link:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo {
+  max-width: 80px;
+  max-height: 40px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .elite-card {
+    border: 2px solid var(--elite-blue);
+  }
+  .form-control-modern {
+    border: 2px solid var(--elite-blue);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --elite-red: #c83a4f;
+    --elite-blue: #3b82f6;
+    --elite-red-light: rgba(200, 58, 79, 0.2);
+    --elite-blue-light: rgba(59, 130, 246, 0.2);
+  }
+  
+  .form-control-modern {
+    background: rgba(30, 41, 59, 0.8);
+    color: white;
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .form-control-modern::placeholder {
+    color: #94a3b8;
+  }
+}

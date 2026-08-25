@@ -1,0 +1,190 @@
+/* App Layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Student Layout */
+.student-layout {
+  min-height: 100vh;
+  background: #ffffff;
+  width: 100%;
+}
+
+/* Mobile Header */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  z-index: 1000;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #495057;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle-btn:hover {
+  background: #f8f9fa;
+  color: #a51c30;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-logo-img {
+  height: 35px;
+  width: auto;
+}
+
+.mobile-app-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00356b;
+}
+
+/* Sidebar Desktop */
+.sidebar-container.desktop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+
+.sidebar-container.desktop.open {
+  width: 300px;
+}
+
+.sidebar-container.desktop.closed {
+  width: 80px;
+}
+
+/* Sidebar Mobile */
+.sidebar-container.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  z-index: 1100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-container.mobile.open {
+  transform: translateX(0);
+}
+
+/* Sidebar Overlay for Mobile */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  backdrop-filter: blur(4px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  padding-left: 300px; /* Default to sidebar open */
+}
+
+.main-content.full-width {
+  padding-left: 0;
+  margin-left: -20px;
+}
+
+.sidebar-container.desktop.closed ~ .main-content {
+  padding-left: 80px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  padding: 1rem;
+  width: 100%;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .main-content {
+    padding-top: 60px;
+    padding-left: 0 !important;
+  }
+
+  .content-wrapper {
+    padding: 1rem;
+  }
+
+  .sidebar-container.desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
+
+  .sidebar-container.mobile {
+    display: none;
+  }
+
+  .content-wrapper {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+}
+
+/* Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-container,
+  .main-content,
+  .mobile-toggle-btn {
+    transition: none;
+  }
+}
