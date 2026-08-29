@@ -1,0 +1,56 @@
+name: Deploy Elite CBT
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install & Build Frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+      - name: Install Backend deps
+        run: |
+          cd backend
+          npm ci --omit=dev
+
+      - name: Deploy to VPS
+        run: |
+          rsync -az --delete \
+            --exclude node_modules \
+            --exclude .env \
+            --exclude .git \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            . ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/html/elite/elite-cbt/
+
+      - name: Restart service
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S systemctl restart elite-cbt-api
+            sleep 2
+            if systemctl is-active --quiet elite-cbt-api; then
+              echo "✓ elite-cbt-api running"
+            else
+              echo "✗ elite-cbt-api FAILED"
+              systemctl status elite-cbt-api --no-pager
+              exit 1
+            fi
+          EOF
