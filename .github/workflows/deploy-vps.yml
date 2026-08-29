@@ -7,13 +7,9 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-
-      - uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,23 +30,21 @@ jobs:
 
       - name: Deploy to VPS
         run: |
-          rsync -az --delete \
+          DEST=/var/www/html/elite/elite-cbt
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S rsync -az --delete \
             --exclude node_modules \
             --exclude .env \
             --exclude .git \
-            -e "ssh -o StrictHostKeyChecking=no" \
-            . ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/html/elite/elite-cbt/
+            ./ "$DEST/"
 
       - name: Restart service
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
-            echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S systemctl restart elite-cbt-api
-            sleep 2
-            if systemctl is-active --quiet elite-cbt-api; then
-              echo "✓ elite-cbt-api running"
-            else
-              echo "✗ elite-cbt-api FAILED"
-              systemctl status elite-cbt-api --no-pager
-              exit 1
-            fi
-          EOF
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S systemctl restart elite-cbt-api
+          sleep 2
+          if systemctl is-active --quiet elite-cbt-api; then
+            echo "✓ elite-cbt-api running"
+          else
+            echo "✗ elite-cbt-api FAILED"
+            echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S systemctl status elite-cbt-api --no-pager
+            exit 1
+          fi
