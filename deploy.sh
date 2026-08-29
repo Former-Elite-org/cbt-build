@@ -4,7 +4,7 @@ set -e
 APP_VERSION="1.0.0.4"
 APP_VERSION_CODE=100004
 
-GITHUB_TOKEN="${GITHUB_TOKEN:-REMOVED_TOKEN}"
+GITHUB_TOKEN="${GITHUB_TOKEN:-ghp_PLACEHOLDER}"
 WEB_DIST_REPO="https://${GITHUB_TOKEN}@github.com/eliteedtech/elite-cbt-dist.git"
 APK_REPO="https://${GITHUB_TOKEN}@github.com/eliteedtech1-debug/cbt-apk.git"
 CBT_BUILD_REPO="https://${GITHUB_TOKEN}@github.com/Ibagwai/cbt-web.git"

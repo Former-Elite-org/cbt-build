@@ -65,7 +65,7 @@ git add -A
 git commit -m "Manual deployment with vercel.json fix"
 
 # Add remote and push
-GITHUB_TOKEN="REMOVED_TOKEN"
+GITHUB_TOKEN="${GITHUB_TOKEN:-ghp_PLACEHOLDER}"
 REPO="https://${GITHUB_TOKEN}@github.com/eliteedtech1-debug/cbt-build.git"
 
 git remote add origin "$REPO"
