@@ -17140,7 +17140,7 @@ CREATE TABLE `company_info` (
 --
 
 INSERT INTO `company_info` (`id`, `company_name`, `address`, `phone`, `email`, `website`, `logo_url`, `tax_id`, `business_reg_number`, `default_currency`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Elite Edutech LTD', 'F1 African Alliance building, Sani Abacha way, Airport road, Kano', '+234-912-4611-644', 'info@elitescholar.ng', 'https://elitescholar.ng', 'assets/img/elitescholar-logo.png', '33070094-0001', '8405916', 'NGN', 1, '2025-11-09 08:42:59', '2025-11-09 08:42:59');
+(1, 'Elite Edutech LTD', 'F1 African Alliance building, Sani Abacha way, Airport road, Kano', '+234-912-4611-644', 'info@elitescholar.ng', 'https://elitescholar.ng', 'assets/img/elscholar.png', '33070094-0001', '8405916', 'NGN', 1, '2025-11-09 08:42:59', '2025-11-09 08:42:59');
 
 -- --------------------------------------------------------
 
