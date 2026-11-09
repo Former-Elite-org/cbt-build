@@ -78,6 +78,7 @@ export function AuthInitializer() {
       const userData = await authService.verifyToken(bearer);
       if (userData.success && userData.user) {
         setAuth(userData.user, bearer, {
+          school: userData.school || null,
           school_locations: userData.school_locations || [],
           classes: userData.classes || [],
           subjects: userData.subjects || [],

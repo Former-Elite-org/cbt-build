@@ -62,6 +62,7 @@ export const useAuth = () => {
     const userData = await authService.verifyToken(token);
     if (userData.success && userData.user) {
       setAuth(userData.user, token, {
+        school: userData.school || null,
         school_locations: userData.school_locations || [],
         classes: userData.classes || [],
         subjects: userData.subjects || [],

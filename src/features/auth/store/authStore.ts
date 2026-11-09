@@ -7,6 +7,7 @@ interface AuthState {
   token: string | null;
   isAuthenticated: boolean;
   isLoading: boolean;
+  school: any | null;
   selected_branch: any | null;
   school_locations: any[];
   classes: any[];
@@ -26,6 +27,7 @@ export const useAuthStore = create<AuthState>()(
       token: null,
       isAuthenticated: false,
       isLoading: true,
+      school: null,
       selected_branch: null,
       school_locations: [],
       classes: [],
@@ -37,6 +39,7 @@ export const useAuthStore = create<AuthState>()(
           token,
           isAuthenticated: true,
           isLoading: false,
+          school: additionalData.school || null,
           selected_branch: additionalData.selected_branch || additionalData.school_locations?.[0] || null,
           school_locations: additionalData.school_locations || [],
           classes: additionalData.classes || [],
@@ -49,6 +52,7 @@ export const useAuthStore = create<AuthState>()(
           token: null,
           isAuthenticated: false,
           isLoading: false,
+          school: null,
           selected_branch: null,
           school_locations: [],
           classes: [],
@@ -68,6 +72,7 @@ export const useAuthStore = create<AuthState>()(
         user: state.user,
         token: state.token,
         isAuthenticated: state.isAuthenticated,
+        school: state.school,
         selected_branch: state.selected_branch,
       }),
     }
