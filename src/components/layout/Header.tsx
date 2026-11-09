@@ -123,11 +123,15 @@ export function Header({ onMenuClick }: HeaderProps) {
               <Menu className="h-5 w-5" />
             </Button>
           )}
-          <SchoolBrandHeader compact className="min-w-0 max-w-[8.5rem] sm:max-w-[14rem]" />
+          <EliteBrandMark compact />
           {school && (
             <span className="h-6 w-px bg-slate-200 dark:bg-slate-700 shrink-0" aria-hidden="true" />
           )}
-          <EliteBrandMark compact nameClassName={school ? 'hidden sm:block' : undefined} />
+          <SchoolBrandHeader
+            compact
+            className="min-w-0 max-w-[8.5rem] sm:max-w-[14rem]"
+            nameClassName="hidden sm:block"
+          />
         </div>
 
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">

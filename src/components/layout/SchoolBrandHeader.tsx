@@ -54,10 +54,12 @@ export function SchoolBrandHeader({
   compact = false,
   logoOnly = false,
   className,
+  nameClassName,
 }: {
   compact?: boolean;
   logoOnly?: boolean;
   className?: string;
+  nameClassName?: string;
 }) {
   const school = useSchoolProfile();
   if (!school?.school_name && !school?.badge_url) return null;
@@ -68,6 +70,7 @@ export function SchoolBrandHeader({
       compact={compact}
       logoOnly={logoOnly}
       className={className}
+      nameClassName={nameClassName}
     />
   );
 }
