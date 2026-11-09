@@ -2,7 +2,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { SchoolBrandHeader } from './SchoolBrandHeader';
 import { useAuthStore } from '@/features/auth/store/authStore';
 import { isStudentRole } from '@/lib/utils/roles';
 import { useIsMobile } from '@/lib/hooks/useMediaQuery';
@@ -34,11 +33,7 @@ export function AppLayout({ children }: AppLayoutProps) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 animate-in fade-in duration-300">
         <FlowTour />
-        <header className="sticky top-0 z-30 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
-          <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-            <SchoolBrandHeader compact />
-          </div>
-        </header>
+        <Header />
         <main className="w-full min-h-[calc(100vh-4rem)]">{children}</main>
       </div>
     );

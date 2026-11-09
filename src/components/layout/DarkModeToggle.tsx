@@ -1,15 +1,23 @@
-import { CiDark, CiLight } from "react-icons/ci";
-import { useTheme } from "@/contexts/ThemeContext";
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
+import { cn } from '@/lib/utils/cn';
 
-export default function DarkModeToggle() {
+export default function DarkModeToggle({ className }: { className?: string }) {
   const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
-      className="h-10 w-10 pt-1 mt-3 text-center hidden lg:flex justify-center text-2xl rounded-full  border-[#002a56] text-[#002a56] dark:hover:gradient-primary dark:text-white transition-colors duration-300"
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Light mode' : 'Dark mode'}
+      className={cn(
+        'inline-flex h-9 w-9 items-center justify-center rounded-full text-[#002a56] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors',
+        className,
+      )}
     >
-      {theme === 'dark' ?  <CiDark /> : <CiLight /> }
+      {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
     </button>
   );
 }

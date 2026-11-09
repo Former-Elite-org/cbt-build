@@ -714,7 +714,6 @@
 import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/features/auth/store/authStore';
-import { useAuth } from '@/features/auth/hooks/useAuth';
 import { _get } from '@/Helper';
 import { Card, CardBody, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -727,7 +726,6 @@ import {
   Play, 
   CheckCircle, 
   Hourglass,
-  LogOut,
   FileText,
   AlertCircle,
   Bell,
@@ -744,8 +742,6 @@ import toast from 'react-hot-toast';
 import moment from 'moment';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
-import DarkModeToggle from "@/components/layout/DarkModeToggle";
-import { ReplayTourButton } from '@/features/tour/FlowTour';
 
 interface Exam {
   id: string;
@@ -770,7 +766,6 @@ interface Exam {
 export default function StudentExamListPage() {
   const navigate = useNavigate();
   const { user } = useAuthStore();
-  const { logout } = useAuth();
   
   // State variables
   const [allExams, setAllExams] = useState<Exam[]>([]);
@@ -979,12 +974,6 @@ export default function StudentExamListPage() {
       return;
     }
     navigate(`/studentresult/${examId}`);
-  };
-
-  const handleLogout = async () => {
-    if (confirm('Are you sure you want to logout?')) {
-      await logout();
-    }
   };
 
   const formatTimeString = (timeStr: string | null | undefined): string => {
@@ -1222,29 +1211,15 @@ export default function StudentExamListPage() {
               </div>
             </div>
 
-<div className="flex items-stretch gap-3 w-full md:w-auto justify-end">
-  <div className="flex items-center justify-center h-10 px-3 rounded-xl ">
-    <DarkModeToggle />
-  </div>
-  <ReplayTourButton className="h-10 text-xs text-slate-500" />
-  <Button
-    variant="outline"
-    data-tour="student-results"
-    onClick={() => navigate('/my-results')}
-    className="h-10 gap-2 rounded-xl"
-  >
-    <FileText className="h-4 w-4" />
-    My Results
-  </Button>
-  <Button
-    variant="outline"
-    onClick={handleLogout}
-    className="h-10 gap-2 rounded-xl"
-  >
-    <LogOut className="h-4 w-4" />
-    Logout
-  </Button>
-</div>
+            <Button
+              variant="outline"
+              data-tour="student-results"
+              onClick={() => navigate('/my-results')}
+              className="h-10 gap-2 rounded-xl w-full md:w-auto"
+            >
+              <FileText className="h-4 w-4" />
+              My Results
+            </Button>
 
           
           </div>
