@@ -280,6 +280,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { useDetailedResult } from '../hooks/useResults';
 import { useAuthStore } from '@/features/auth/store/authStore';
+import { isAdminRole, isStudentRole, isTeacherRole } from '@/lib/utils/roles';
 import { Card, CardBody, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -300,16 +301,16 @@ export default function ViewResultPage() {
                     (user as any)?.admission_no || 
                     (user as any)?.id;
 
-  const userType = user?.user_type?.toLowerCase() || '';
+  const studentView = isStudentRole(user?.user_type);
 
-  if (!studentId && (userType === 'admin' || userType === 'branchadmin' || userType === 'teacher')) {
+  if (!studentId && (isAdminRole(user?.user_type) || isTeacherRole(user?.user_type))) {
     if (id) {
       navigate(`/results?exam_id=${id}`);
       return null;
     }
   }
 
-  if (!studentId && userType === 'student') {
+  if (!studentId && studentView) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-950 p-6 text-center space-y-4">
         <XCircle className="h-12 w-12 text-rose-500 animate-pulse" />
@@ -365,11 +366,11 @@ export default function ViewResultPage() {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => navigate(userType === 'student' ? '/my-results' : '/results')}
+            onClick={() => navigate(studentView ? '/my-results' : '/results')}
             className="h-8 rounded-xl text-xs gap-1.5 px-2.5 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
-            {userType === 'student' ? 'Back to My Results' : 'Back to Results'}
+            {studentView ? 'Back to My Results' : 'Back to Results'}
           </Button>
           <h1 className="text-2xl font-extrabold text-[#002a56] dark:text-white tracking-tight mt-1">Exam Result Details</h1>
           <p className="text-xs text-gray-400 font-medium">Diagnostic profile overview for candidate answers and academic evaluation grading.</p>

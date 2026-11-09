@@ -256,10 +256,12 @@ import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@/components/
 import { Loader2, GraduationCap, User as UserIcon, Building2, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { isFlagshipSubdomain } from '@/lib/utils/flagship';
+import { getSchoolShortName } from '@/lib/utils/school';
 import type { SchoolOption } from '../types/auth.types';
 
 export default function LoginPage() {
-  const [form, setForm] = useState({ email: '', password: '' });
+  const hostShortName = getSchoolShortName();
+  const [form, setForm] = useState({ email: '', password: '', school_id: hostShortName });
   const [loading, setLoading] = useState(false);
   const [isStudentLogin, setIsStudentLogin] = useState(false);
   const [error, setError] = useState('');
@@ -283,10 +285,12 @@ export default function LoginPage() {
     setLoading(true);
     setError('');
     try {
+      const shortName = (hostShortName || form.school_id || '').trim();
       const result = await login({
         username: form.email,
         password: form.password,
         type: isStudentLogin ? 'students' : 'users',
+        ...(shortName ? { short_name: shortName } : {}),
       });
 
       if ((result as any).requiresSchoolSelection) {
@@ -408,6 +412,18 @@ export default function LoginPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {!hostShortName && (
+              <div className="space-y-1.5">
+                <Label htmlFor="school_id" className="text-xs font-bold text-gray-500 dark:text-gray-400">
+                  School short name
+                </Label>
+                <Input id="school_id" name="school_id" type="text"
+                  placeholder="e.g. demo"
+                  value={form.school_id} onChange={handleChange}
+                  className="rounded-xl h-10 text-xs border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800"
+                  required autoComplete="organization" />
+              </div>
+            )}
             <div className="space-y-1.5">
               <Label htmlFor="email" className="text-xs font-bold text-gray-500 dark:text-gray-400">
                 {isStudentLogin ? 'Admission Number' : 'Email Address'}

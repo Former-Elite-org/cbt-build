@@ -2,6 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useAuthStore } from '@/features/auth/store/authStore';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { Loader2 } from 'lucide-react';
+import { normalizeUserType } from '@/lib/utils/roles';
 
 interface ProtectedRouteProps {
   requiredRole?: string;
@@ -21,10 +22,11 @@ export const ProtectedRoute = ({ requiredRole, bare, children }: ProtectedRouteP
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    const search = typeof window !== 'undefined' ? window.location.search : '';
+    return <Navigate to={`/login${search}`} replace />;
   }
 
-  if (requiredRole && user?.user_type !== requiredRole) {
+  if (requiredRole && normalizeUserType(user?.user_type) !== normalizeUserType(requiredRole)) {
     return <Navigate to="/dashboard" replace />;
   }
 

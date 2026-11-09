@@ -4,7 +4,8 @@ interface ImportMetaEnv {
   readonly DEV: boolean
   readonly PROD: boolean
   readonly MODE: string
-  // Add more env variables as needed
+  readonly VITE_API_URL?: string
+  readonly VITE_ELITE_API_URL?: string
 }
 
 interface ImportMeta {

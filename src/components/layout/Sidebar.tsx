@@ -255,6 +255,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/features/auth/store/authStore';
 import { useAuth } from '@/features/auth/hooks/useAuth';
+import { isAdminRole, isStudentRole } from '@/lib/utils/roles';
 import { cn } from '@/lib/utils/cn';
 import {
   LayoutDashboard,
@@ -279,10 +280,9 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
   const { logout } = useAuth();
   const location = useLocation();
 
-  if (user?.user_type === 'Student') return null;
+  if (isStudentRole(user?.user_type)) return null;
 
-  const isAdmin = user?.user_type?.toLowerCase().includes('admin');
-  const isTeacher = user?.user_type === 'Teacher';
+  const isAdmin = isAdminRole(user?.user_type);
 
   const isActive = (path: string) => {
     return location.pathname === path || location.pathname.startsWith(path + '/');

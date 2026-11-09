@@ -1,4 +1,5 @@
 import { useAuthStore } from '@/features/auth/store/authStore';
+import { isAdminRole, isStudentRole, isTeacherRole } from '@/lib/utils/roles';
 import ExamsManagerPage from './ExamsManagerPage';
 import TeachersExamPage from './TeachersExamPage';
 import StudentExamListPage from './StudentExamListPage';
@@ -16,17 +17,15 @@ export default function ExamListPage() {
     );
   }
 
-  const userType = user?.user_type?.toLowerCase() || '';
-
-  if (userType === 'admin' || userType === 'branchadmin') {
+  if (isAdminRole(user?.user_type)) {
     return <ExamsManagerPage />;
   }
 
-  if (userType === 'teacher') {
+  if (isTeacherRole(user?.user_type)) {
     return <TeachersExamPage />;
   }
 
-  if (userType === 'student') {
+  if (isStudentRole(user?.user_type)) {
     return <StudentExamListPage />;
   }
 

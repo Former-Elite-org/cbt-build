@@ -1,4 +1,5 @@
 import { useAuthStore } from '@/features/auth/store/authStore';
+import { isAdminRole, isStudentRole, isTeacherRole } from '@/lib/utils/roles';
 import AdminDashboardPage from './AdminDashboardPage';
 import TeacherDashboardPage from './TeacherDashboardPage';
 import StudentDashboardPage from './StudentDashboardPage';
@@ -17,17 +18,15 @@ export default function DashboardPage() {
     );
   }
 
-  const userType = user?.user_type?.toLowerCase() || '';
-
-  if (userType === 'admin' || userType === 'branchadmin') {
+  if (isAdminRole(user?.user_type)) {
     return <AdminDashboardPage />;
   }
 
-  if (userType === 'teacher') {
+  if (isTeacherRole(user?.user_type)) {
     return <TeacherDashboardPage />;
   }
 
-  if (userType === 'student') {
+  if (isStudentRole(user?.user_type)) {
     return <StudentDashboardPage />;
   }
 

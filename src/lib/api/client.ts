@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { API_CONFIG, STORAGE_KEYS } from '@/lib/utils/constants';
+import { withBearer } from '@/lib/utils/roles';
 import { ApiError } from '@/types/api.types';
 
 // Create axios instance
@@ -16,7 +17,7 @@ apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const token = localStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
     if (token && config.headers) {
-      config.headers.Authorization = token;
+      config.headers.Authorization = withBearer(token);
     }
     return config;
   },

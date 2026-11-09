@@ -10,6 +10,7 @@ import {
   OnboardingPayload,
 } from '../types/auth.types';
 import { ApiResponse } from '@/types/api.types';
+import { withBearer } from '@/lib/utils/roles';
 
 export const authService = {
   login: async (credentials: LoginCredentials): Promise<LoginResponse> => {
@@ -18,6 +19,8 @@ export const authService = {
       {
         username: credentials.username,
         password: credentials.password,
+        ...(credentials.short_name ? { short_name: credentials.short_name } : {}),
+        ...(credentials.school_id ? { school_id: credentials.school_id } : {}),
       }
     );
     return response.data;
@@ -49,7 +52,7 @@ export const authService = {
   verifyToken: async (token: string): Promise<UserProfile> => {
     const response = await apiClient.get<UserProfile>(ENDPOINTS.AUTH.VERIFY_TOKEN, {
       headers: {
-        authorization: token,
+        authorization: withBearer(token),
       },
     });
     return response.data;

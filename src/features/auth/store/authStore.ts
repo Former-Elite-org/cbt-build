@@ -25,7 +25,7 @@ export const useAuthStore = create<AuthState>()(
       user: null,
       token: null,
       isAuthenticated: false,
-      isLoading: false, // Will be set to true when initializing
+      isLoading: true,
       selected_branch: null,
       school_locations: [],
       classes: [],

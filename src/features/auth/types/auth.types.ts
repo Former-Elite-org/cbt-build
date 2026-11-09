@@ -2,6 +2,8 @@ export interface LoginCredentials {
   username: string;
   password: string;
   type: 'users' | 'students';
+  short_name?: string;
+  school_id?: string;
 }
 
 export interface SchoolOption {

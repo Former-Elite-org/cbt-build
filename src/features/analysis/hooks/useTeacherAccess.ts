@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useAuthStore } from '@/features/auth/store/authStore';
+import { isTeacherRole } from '@/lib/utils/roles';
 
 export interface AccessSubjectOption {
   value: string;
@@ -9,7 +10,7 @@ export interface AccessSubjectOption {
 export function useTeacherAccess() {
   const { user, selected_branch, classes, subjects } = useAuthStore();
 
-  const isTeacher = ['teacher', 'exam_officer'].includes((user?.user_type || '').toLowerCase());
+  const isTeacher = isTeacherRole(user?.user_type);
 
   // Subject codes the user has access to (from verifyToken: teacher_classes for
   // teachers, the subjects table for admins/officers).

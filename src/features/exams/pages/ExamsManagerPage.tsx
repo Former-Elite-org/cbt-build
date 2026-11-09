@@ -594,6 +594,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useAuthStore } from '@/features/auth/store/authStore';
+import { isAdminRole } from '@/lib/utils/roles';
 import { useExams, useUpdateExamStatus, useUpdateExam } from '../hooks/useExams';
 import { Card, CardBody, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -634,7 +635,7 @@ export default function ExamsManagerPage() {
   
   const school_id = user?.school_id;
   const branch_id = selected_branch?.branch_id;
-  const isAdmin = user?.user_type === 'Admin' || user?.user_type === 'BranchAdmin';
+  const isAdmin = isAdminRole(user?.user_type);
 
   const { data: pendingData, isLoading: pendingLoading } = useExams({
     status: 'Pending',

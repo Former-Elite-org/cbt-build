@@ -12,6 +12,8 @@ export const useAuth = () => {
     username: string;
     password: string;
     type: 'users' | 'students';
+    short_name?: string;
+    school_id?: string;
   }) => {
     setLoading(true);
     try {
@@ -56,7 +58,7 @@ export const useAuth = () => {
   };
 
   const _completeLogin = async (token: string) => {
-    localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, token);
+    localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, token.startsWith('Bearer ') ? token : `Bearer ${token}`);
     const userData = await authService.verifyToken(token);
     if (userData.success && userData.user) {
       setAuth(userData.user, token, {

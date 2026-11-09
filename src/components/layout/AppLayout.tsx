@@ -3,6 +3,7 @@ import { ReactNode, useState, useEffect } from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { useAuthStore } from '@/features/auth/store/authStore';
+import { isStudentRole } from '@/lib/utils/roles';
 import { useIsMobile } from '@/lib/hooks/useMediaQuery';
 import { cn } from '@/lib/utils/cn';
 
@@ -21,7 +22,7 @@ export function AppLayout({ children }: AppLayoutProps) {
   }, [isMobile]);
 
   // Student layout - full width
-  if (user?.user_type === 'Student') {
+  if (isStudentRole(user?.user_type)) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 animate-in fade-in duration-300">
         <main className="w-full min-h-screen">{children}</main>
