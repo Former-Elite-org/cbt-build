@@ -55,9 +55,13 @@ export interface UserProfile {
 
 export interface SchoolDetails {
   school_id: string;
-  name: string;
-  badge_url?: string;
-  cbt_center: number;
+  school_name?: string;
+  name?: string;
+  short_name?: string;
+  badge_url?: string | null;
+  cbt_center?: number | null;
+  cbt_enabled?: number | null;
+  cbt_stand_alone?: number | null;
 }
 
 export interface RegisterPayload {

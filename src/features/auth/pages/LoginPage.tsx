@@ -246,9 +246,10 @@
 // }
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { authService } from '../services/authService';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -257,9 +258,23 @@ import { Loader2, GraduationCap, User as UserIcon, Building2, CheckCircle2 } fro
 import { cn } from '@/lib/utils/cn';
 import { isFlagshipSubdomain } from '@/lib/utils/flagship';
 import { getSchoolShortName } from '@/lib/utils/school';
-import type { SchoolOption } from '../types/auth.types';
+import type { SchoolDetails, SchoolOption } from '../types/auth.types';
 
 const LOGIN_SCHOOL_HINT_KEY = 'cbt.tour.v1:login-school';
+
+function parseLookedUpSchool(row: SchoolDetails | null | undefined) {
+  if (!row?.school_id) return null;
+  const flags = [row.cbt_enabled, row.cbt_center, row.cbt_stand_alone]
+    .filter((value) => value !== null && value !== undefined);
+  const cbtOn = flags.length === 0 || flags.some((value) => Number(value) > 0);
+  return {
+    school_id: row.school_id,
+    school_name: row.school_name || row.name || '',
+    short_name: String(row.short_name || '').toLowerCase(),
+    badge_url: row.badge_url || null,
+    cbtEnabled: cbtOn,
+  };
+}
 
 export default function LoginPage() {
   const hostShortName = getSchoolShortName();
@@ -267,6 +282,8 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [isStudentLogin, setIsStudentLogin] = useState(false);
   const [error, setError] = useState('');
+  const [lookedUpSchool, setLookedUpSchool] = useState<ReturnType<typeof parseLookedUpSchool>>(null);
+  const [schoolLookup, setSchoolLookup] = useState<'idle' | 'loading' | 'found' | 'missing'>('idle');
   const [showSchoolHint, setShowSchoolHint] = useState(() => {
     if (hostShortName) return false;
     try {
@@ -285,6 +302,36 @@ export default function LoginPage() {
   const { login, selectSchool } = useAuth();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const sn = (hostShortName || form.school_id || '').trim().toLowerCase();
+    if (sn.length < 2) {
+      setLookedUpSchool(null);
+      setSchoolLookup('idle');
+      return;
+    }
+    let cancelled = false;
+    setSchoolLookup('loading');
+    const timer = window.setTimeout(async () => {
+      try {
+        const res = await authService.getSchoolDetails(sn);
+        if (cancelled) return;
+        const row = res.success && Array.isArray(res.data) ? res.data[0] : null;
+        const parsed = parseLookedUpSchool(row);
+        setLookedUpSchool(parsed);
+        setSchoolLookup(parsed ? 'found' : hostShortName ? 'missing' : 'idle');
+      } catch {
+        if (!cancelled) {
+          setLookedUpSchool(null);
+          setSchoolLookup(hostShortName ? 'missing' : 'idle');
+        }
+      }
+    }, hostShortName ? 0 : 400);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [hostShortName, form.school_id]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm(p => ({ ...p, [e.target.name]: e.target.value }));
     setError('');
@@ -295,12 +342,13 @@ export default function LoginPage() {
     setLoading(true);
     setError('');
     try {
-      const shortName = (hostShortName || form.school_id || '').trim();
+      const shortName = (hostShortName || lookedUpSchool?.short_name || form.school_id || '').trim().toLowerCase();
       const result = await login({
         username: form.email,
         password: form.password,
         type: isStudentLogin ? 'students' : 'users',
         ...(shortName ? { short_name: shortName } : {}),
+        ...(lookedUpSchool?.school_id ? { school_id: lookedUpSchool.school_id } : {}),
       });
 
       if ((result as any).requiresSchoolSelection) {
@@ -383,6 +431,29 @@ export default function LoginPage() {
     );
   }
 
+  const blockUnsubscribed = schoolLookup === 'found' && lookedUpSchool && !lookedUpSchool.cbtEnabled
+    && hostShortName !== 'elite' && hostShortName !== 'practice';
+
+  if (blockUnsubscribed) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 px-4 py-12">
+        <Card className="w-full max-w-md border-none bg-white dark:bg-gray-900 shadow-xl rounded-2xl overflow-hidden">
+          <CardHeader className="text-center p-6 space-y-3">
+            {lookedUpSchool.badge_url && (
+              <img src={lookedUpSchool.badge_url} alt="" className="w-20 h-20 mx-auto rounded-full object-cover" />
+            )}
+            <CardTitle className="text-lg font-black text-[#002a56] dark:text-white">Access restricted</CardTitle>
+          </CardHeader>
+          <CardBody className="p-6 pt-0">
+            <p className="text-sm text-gray-600 dark:text-gray-300 text-center leading-relaxed">
+              {lookedUpSchool.school_name || 'This school'} does not subscribe to Elite CBT. Ask the school administrator to enable it.
+            </p>
+          </CardBody>
+        </Card>
+      </div>
+    );
+  }
+
   // ── Main login screen ──────────────────────────────────────────────────────
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 px-4 py-12 animate-in fade-in duration-300">
@@ -390,7 +461,9 @@ export default function LoginPage() {
         <CardHeader className="text-center p-6 space-y-4">
           <div className="mx-auto">
             <div className="relative inline-block group">
-              <img src="/logo192.png" alt="Elite CBT"
+              <img
+                src={lookedUpSchool?.badge_url || '/logo192.png'}
+                alt={lookedUpSchool?.school_name || 'Elite CBT'}
                 className="w-24 h-24 mx-auto rounded-full object-cover border-4 border-gray-100 dark:border-gray-800 shadow-md group-hover:scale-105 transition-transform duration-300"/>
               <div className="absolute -bottom-1 -right-1 rounded-full bg-[#002a56] dark:bg-blue-950 p-1.5 text-white shadow">
                 {isStudentLogin ? <GraduationCap className="h-4 w-4" /> : <UserIcon className="h-4 w-4" />}
@@ -398,10 +471,20 @@ export default function LoginPage() {
             </div>
           </div>
           <div>
-            <CardTitle className="text-3xl font-black text-[#002a56] dark:text-white tracking-tight">Elite CBT</CardTitle>
+            <CardTitle className="text-3xl font-black text-[#002a56] dark:text-white tracking-tight">
+              {lookedUpSchool?.school_name || 'Elite CBT'}
+            </CardTitle>
             <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-1">
-              Computer Based Testing Platform
+              {lookedUpSchool ? 'Computer Based Testing' : 'Computer Based Testing Platform'}
             </p>
+            {schoolLookup === 'loading' && hostShortName && (
+              <p className="text-[11px] text-gray-400 mt-2">Looking up {hostShortName}…</p>
+            )}
+            {schoolLookup === 'missing' && hostShortName && (
+              <p className="text-[11px] text-amber-600 dark:text-amber-400 mt-2 font-semibold">
+                No school is registered at {hostShortName}.elitecbt.com.ng
+              </p>
+            )}
           </div>
         </CardHeader>
 

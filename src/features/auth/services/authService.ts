@@ -59,8 +59,9 @@ export const authService = {
   },
 
   getSchoolDetails: async (shortName: string): Promise<ApiResponse<SchoolDetails[]>> => {
+    const sn = encodeURIComponent(String(shortName || '').trim().toLowerCase());
     const response = await apiClient.get<ApiResponse<SchoolDetails[]>>(
-      `schools/get-details?query_type=select-by-short-name&short_name=${shortName}`
+      `schools/get-details?query_type=select-by-short-name&short_name=${sn}`
     );
     return response.data;
   },
