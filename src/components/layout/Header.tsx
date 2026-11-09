@@ -77,7 +77,8 @@ import {
   tourUserId,
 } from '@/features/tour/tourConfig';
 import DarkModeToggle from './DarkModeToggle';
-import { SchoolBrandHeader } from './SchoolBrandHeader';
+import { EliteBrandMark, SchoolBrandHeader } from './SchoolBrandHeader';
+import { useSchoolProfile } from '@/features/auth/hooks/useSchoolProfile';
 
 interface HeaderProps {
   onMenuClick?: () => void;
@@ -106,6 +107,7 @@ export function Header({ onMenuClick }: HeaderProps) {
     ? `Adm. ${account?.admission_no || account?.user_id || ''}`.trim()
     : (user?.user_type || 'Staff');
   const role = tourRole(user?.user_type);
+  const school = useSchoolProfile();
 
   return (
     <header className="sticky top-0 z-30 h-16 w-full border-b border-gray-100 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md">
@@ -121,7 +123,11 @@ export function Header({ onMenuClick }: HeaderProps) {
               <Menu className="h-5 w-5" />
             </Button>
           )}
-          <SchoolBrandHeader compact />
+          <SchoolBrandHeader compact className="min-w-0 max-w-[8.5rem] sm:max-w-[14rem]" />
+          {school && (
+            <span className="h-6 w-px bg-slate-200 dark:bg-slate-700 shrink-0" aria-hidden="true" />
+          )}
+          <EliteBrandMark compact nameClassName={school ? 'hidden sm:block' : undefined} />
         </div>
 
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">
