@@ -937,7 +937,7 @@ export default function ExamsManagerPage() {
       </div>
 
       <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as ExamStatus)} className="w-full space-y-6">
-        <TabsList className="bg-gray-100 dark:bg-gray-800 p-1 rounded-2xl flex flex-wrap h-auto gap-1 border-none max-w-2xl">
+        <TabsList data-tour="exam-tabs" className="bg-gray-100 dark:bg-gray-800 p-1 rounded-2xl flex flex-wrap h-auto gap-1 border-none max-w-2xl">
           <TabsTrigger value="Pending" className="rounded-xl px-4 py-2 text-xs font-semibold data-[state=active]:bg-[#002a56] data-[state=active]:text-white dark:data-[state=active]:bg-red-950/50 flex items-center gap-1.5 flex-1">
             Pending <Badge className="bg-amber-500/30 text-white rounded-md px-1.5 py-0 text-[10px]">{pendingCount}</Badge>
           </TabsTrigger>

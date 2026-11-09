@@ -259,12 +259,22 @@ import { isFlagshipSubdomain } from '@/lib/utils/flagship';
 import { getSchoolShortName } from '@/lib/utils/school';
 import type { SchoolOption } from '../types/auth.types';
 
+const LOGIN_SCHOOL_HINT_KEY = 'cbt.tour.v1:login-school';
+
 export default function LoginPage() {
   const hostShortName = getSchoolShortName();
   const [form, setForm] = useState({ email: '', password: '', school_id: hostShortName });
   const [loading, setLoading] = useState(false);
   const [isStudentLogin, setIsStudentLogin] = useState(false);
   const [error, setError] = useState('');
+  const [showSchoolHint, setShowSchoolHint] = useState(() => {
+    if (hostShortName) return false;
+    try {
+      return localStorage.getItem(LOGIN_SCHOOL_HINT_KEY) !== 'done';
+    } catch {
+      return true;
+    }
+  });
 
   // Multi-school selection state
   const [schoolSelectionData, setSchoolSelectionData] = useState<{
@@ -413,7 +423,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {!hostShortName && (
-              <div className="space-y-1.5">
+              <div className="space-y-1.5" data-tour="login-school">
                 <Label htmlFor="school_id" className="text-xs font-bold text-gray-500 dark:text-gray-400">
                   School short name
                 </Label>
@@ -422,6 +432,23 @@ export default function LoginPage() {
                   value={form.school_id} onChange={handleChange}
                   className="rounded-xl h-10 text-xs border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800"
                   required autoComplete="organization" />
+                {showSchoolHint && (
+                  <div className="rounded-xl border border-[#002a56]/15 bg-[#002a56]/5 dark:bg-sky-500/10 p-3 space-y-2">
+                    <p className="text-[11px] leading-relaxed text-gray-600 dark:text-gray-300">
+                      Use the school short name — the same label as the subdomain, for example <span className="font-bold">demo</span> for demo.elitecbt.com.ng. Staff and students both need it here on the main site.
+                    </p>
+                    <button
+                      type="button"
+                      className="text-[11px] font-bold text-[#002a56] dark:text-sky-400"
+                      onClick={() => {
+                        try { localStorage.setItem(LOGIN_SCHOOL_HINT_KEY, 'done'); } catch { /* private mode */ }
+                        setShowSchoolHint(false);
+                      }}
+                    >
+                      Got it
+                    </button>
+                  </div>
+                )}
               </div>
             )}
             <div className="space-y-1.5">

@@ -560,7 +560,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
       {/* Title Header */}
-      <div>
+      <div data-tour="dashboard-overview">
         <h1 className="text-3xl font-extrabold text-[#002a56] dark:text-white tracking-tight">
           Dashboard Overview
         </h1>

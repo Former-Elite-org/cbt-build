@@ -634,7 +634,7 @@ export default function AdminResultsPage() {
       <div className="space-y-6 animate-in fade-in duration-300">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-extrabold text-[#002a56] dark:text-white tracking-tight">Exam Results Records</h1>
+            <h1 data-tour="results-list" className="text-3xl font-extrabold text-[#002a56] dark:text-white tracking-tight">Exam Results Records</h1>
             <p className="text-gray-500 dark:text-gray-400 mt-1">Select an active published exam repository to view performance logs.</p>
           </div>
         </div>
@@ -718,7 +718,7 @@ export default function AdminResultsPage() {
           >
             <ArrowLeft className="h-4 w-4 mr-1" /> Back to Exams
           </Button>
-          <h1 className="text-3xl font-extrabold text-[#002a56] dark:text-white tracking-tight mt-1">
+          <h1 data-tour="results-list" className="text-3xl font-extrabold text-[#002a56] dark:text-white tracking-tight mt-1">
             {selectedExam?.title || selectedExam?.assessment_type || 'Exam Results'}
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">

@@ -61,6 +61,7 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/features/auth/store/authStore";
 import DarkModeToggle from "./DarkModeToggle";
+import { ReplayTourButton } from "@/features/tour/FlowTour";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -91,6 +92,7 @@ export function Header({ onMenuClick }: HeaderProps) {
 
         {/* Right Section: Actions & User Profile */}
         <div className="flex items-center gap-4">
+          <ReplayTourButton className="hidden sm:inline-flex h-8 text-xs text-gray-500" />
           {/* Dark Mode Toggle */}
           <div className="flex items-center">
             <DarkModeToggle />

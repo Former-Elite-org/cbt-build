@@ -880,6 +880,7 @@ export default function TeachersExamPage() {
         </div>
         <Button 
           onClick={() => navigate('/exams/create')}
+          data-tour="teacher-create-exam"
           className="gap-2 bg-[#00356B] hover:bg-[#00254B] text-white"
         >
           <Plus className="h-4 w-4" />

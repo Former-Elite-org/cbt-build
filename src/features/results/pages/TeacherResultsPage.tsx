@@ -598,7 +598,7 @@ export default function TeacherResultsPage() {
     return (
       <div className="space-y-6 p-6 bg-gray-50 dark:bg-gray-900 min-h-screen">
         <div>
-          <h1 className="text-3xl font-bold text-[#00356B] dark:text-white">My Exam Results</h1>
+          <h1 data-tour="results-list" className="text-3xl font-bold text-[#00356B] dark:text-white">My Exam Results</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-1">Select an exam to view results</p>
         </div>
 

@@ -199,7 +199,7 @@ export default function StudentResultsPage() {
   return (
     <div className="space-y-6 p-6 bg-gray-50 dark:bg-gray-900 min-h-screen">
       {/* Header */}
-      <div>
+      <div data-tour="student-results-list">
         <Button
           variant="ghost"
           onClick={() => navigate('/exams')}

@@ -293,16 +293,19 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
       icon: LayoutDashboard,
       label: 'Dashboard',
       path: '/dashboard',
+      tour: 'nav-dashboard',
     },
     {
       icon: FileText,
       label: 'Exams',
       path: '/exams',
+      tour: 'nav-exams',
     },
     {
       icon: BookOpen,
       label: 'Results',
       path: '/results',
+      tour: 'nav-results',
     },
   ];
 
@@ -392,6 +395,7 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
                   key={item.path}
                   to={item.path}
                   onClick={handleLinkClick}
+                  data-tour={item.tour}
                   className={cn(
                     'flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group relative',
                     active
@@ -417,7 +421,7 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
 
           {/* Admin Management Section */}
           {isAdmin && (
-            <div className="space-y-2 px-3">
+            <div className="space-y-2 px-3" data-tour="nav-school">
               {isOpen && (
                 <div className="px-3 py-2 text-xs font-semibold text-[#002a56] dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
                   <div className="h-1 w-1 rounded-full bg-[#002a56] dark:bg-gray-500 animate-pulse" />

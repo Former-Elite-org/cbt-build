@@ -745,6 +745,7 @@ import moment from 'moment';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import DarkModeToggle from "@/components/layout/DarkModeToggle";
+import { ReplayTourButton } from '@/features/tour/FlowTour';
 
 interface Exam {
   id: string;
@@ -1197,7 +1198,7 @@ export default function StudentExamListPage() {
     <div className="space-y-8 p-4 md:p-8 bg-slate-50/50 dark:bg-slate-950 min-h-screen transition-colors duration-300">
       
       {/* Premium Student Profile Card */}
-      <Card className="bg-white dark:bg-slate-900 border-slate-200/60 dark:border-slate-800/80 shadow-sm rounded-2xl overflow-hidden">
+      <Card data-tour="student-profile" className="bg-white dark:bg-slate-900 border-slate-200/60 dark:border-slate-800/80 shadow-sm rounded-2xl overflow-hidden">
         <CardBody className="p-5 md:p-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
@@ -1225,7 +1226,16 @@ export default function StudentExamListPage() {
   <div className="flex items-center justify-center h-10 px-3 rounded-xl ">
     <DarkModeToggle />
   </div>
-
+  <ReplayTourButton className="h-10 text-xs text-slate-500" />
+  <Button
+    variant="outline"
+    data-tour="student-results"
+    onClick={() => navigate('/my-results')}
+    className="h-10 gap-2 rounded-xl"
+  >
+    <FileText className="h-4 w-4" />
+    My Results
+  </Button>
   <Button
     variant="outline"
     onClick={handleLogout}
@@ -1376,7 +1386,7 @@ export default function StudentExamListPage() {
       <Card className="bg-white dark:bg-slate-900 border-slate-200/60 dark:border-slate-800/80 shadow-sm rounded-2xl overflow-hidden">
         <CardBody className="p-3">
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)}>
-            <TabsList className="grid w-full grid-cols-3 bg-slate-100 dark:bg-slate-950 p-1.5 rounded-xl h-auto">
+            <TabsList data-tour="student-exam-tabs" className="grid w-full grid-cols-3 bg-slate-100 dark:bg-slate-950 p-1.5 rounded-xl h-auto">
               <TabsTrigger 
                 value="Pending" 
                 className="gap-2 rounded-lg py-2.5 transition-all text-slate-600 dark:text-slate-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-900 data-[state=active]:text-[#00356b] dark:data-[state=active]:text-blue-400 data-[state=active]:shadow-sm font-semibold text-sm"

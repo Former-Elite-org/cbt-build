@@ -6,6 +6,8 @@ import { useAuthStore } from '@/features/auth/store/authStore';
 import { isStudentRole } from '@/lib/utils/roles';
 import { useIsMobile } from '@/lib/hooks/useMediaQuery';
 import { cn } from '@/lib/utils/cn';
+import { FlowTour } from '@/features/tour/FlowTour';
+import { TOUR_OPEN_SIDEBAR } from '@/features/tour/tourConfig';
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -16,23 +18,29 @@ export function AppLayout({ children }: AppLayoutProps) {
   const isMobile = useIsMobile();
   const [sidebarOpen, setSidebarOpen] = useState(!isMobile);
 
-  // إغلاق أو فتح السايدبار تلقائياً عند التحويل بين الموبايل والديسك توب
   useEffect(() => {
     setSidebarOpen(!isMobile);
   }, [isMobile]);
+
+  useEffect(() => {
+    const open = () => setSidebarOpen(true);
+    window.addEventListener(TOUR_OPEN_SIDEBAR, open);
+    return () => window.removeEventListener(TOUR_OPEN_SIDEBAR, open);
+  }, []);
 
   // Student layout - full width
   if (isStudentRole(user?.user_type)) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 animate-in fade-in duration-300">
+        <FlowTour />
         <main className="w-full min-h-screen">{children}</main>
       </div>
     );
   }
 
-  // Admin/Teacher layout with sidebar
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex">
+      <FlowTour />
       {/* Sidebar Component */}
       <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
 

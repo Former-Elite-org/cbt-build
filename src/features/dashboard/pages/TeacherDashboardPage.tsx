@@ -406,7 +406,7 @@ export default function TeacherDashboardPage() {
     <div className="space-y-6 p-6 bg-gray-50/30 dark:bg-gray-950 min-h-screen">
       
       {/* Dashboard Headline Bar Header */}
-      <div className="border-b border-gray-100 dark:border-gray-800 pb-4">
+      <div className="border-b border-gray-100 dark:border-gray-800 pb-4" data-tour="dashboard-overview">
         <h1 className="text-2xl font-black tracking-tight text-gray-800 dark:text-gray-100">Teacher Dashboard</h1>
         <p className="text-xs text-gray-400 mt-0.5">Manage institutional faculties, construct examinations or monitor student logs parameters feed.</p>
       </div>
@@ -443,7 +443,7 @@ export default function TeacherDashboardPage() {
             <TrendingUp className="h-4 w-4 text-[#00356B]" /> Command Quick Actions
           </CardTitle>
         </CardHeader>
-        <CardBody className="p-4">
+        <CardBody className="p-4" data-tour="teacher-quick-actions">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {quickActions.map((action, idx) => {
               const Icon = action.icon;
