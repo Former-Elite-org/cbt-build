@@ -164,7 +164,6 @@
 
 import { useState, useEffect } from 'react';
 import { useAuthStore } from '@/features/auth/store/authStore';
-import { useSchoolProfile } from '@/features/auth/hooks/useSchoolProfile';
 import { useStudentResults } from '../hooks/useResults';
 import { Card, CardBody, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -177,7 +176,6 @@ import { ExamResult } from '../types/result.types';
 
 export default function StudentResultsPage() {
   const { user } = useAuthStore();
-  const school = useSchoolProfile();
   const navigate = useNavigate();
   
   const admissionNo = (user as any)?.admission_no || (user as any)?.id || (user as any)?.user_id;
@@ -210,18 +208,6 @@ export default function StudentResultsPage() {
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Exams
         </Button>
-        {school && (
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-10 w-10 rounded-xl overflow-hidden bg-white dark:bg-gray-800 shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-              <img
-                src={school.badge_url || '/logo192.png'}
-                alt={school.school_name}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <p className="text-sm font-bold text-[#00356B] dark:text-white truncate">{school.school_name}</p>
-          </div>
-        )}
         <h1 className="text-3xl font-bold text-[#00356B] dark:text-white">My Results</h1>
         <p className="text-gray-500 dark:text-gray-400 mt-1">View all your exam results</p>
       </div>

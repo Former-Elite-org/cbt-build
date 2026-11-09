@@ -269,6 +269,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SchoolBrandHeader } from './SchoolBrandHeader';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -344,19 +345,8 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-100 dark:border-gray-800 shrink-0">
-          <div className="flex items-center gap-3 overflow-hidden">
-            <div className="w-9 h-9 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-sm shrink-0">
-              <img
-                src="/logo192.png"
-                alt="Elite CBT"
-                className="w-6 h-6 object-contain"
-              />
-            </div>
-            {isOpen && (
-              <span className="font-bold text-[#002a56] dark:text-white text-base tracking-tight whitespace-nowrap animate-in fade-in slide-in-from-left-4 duration-200">
-                Elite CBT
-              </span>
-            )}
+          <div className="flex items-center overflow-hidden min-w-0">
+            <SchoolBrandHeader compact logoOnly />
           </div>
 
           {/* Toggle Buttons */}

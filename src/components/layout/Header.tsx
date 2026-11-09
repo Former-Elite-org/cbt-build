@@ -62,6 +62,7 @@ import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/features/auth/store/authStore";
 import DarkModeToggle from "./DarkModeToggle";
 import { ReplayTourButton } from "@/features/tour/FlowTour";
+import { SchoolBrandHeader } from "./SchoolBrandHeader";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -85,9 +86,7 @@ export function Header({ onMenuClick }: HeaderProps) {
             <Menu className="h-5 w-5" />
           </Button>
 
-          <h1 className="text-lg font-bold tracking-tight text-[#002a56] dark:text-white lg:hidden">
-            Elite CBT
-          </h1>
+          <SchoolBrandHeader compact />
         </div>
 
         {/* Right Section: Actions & User Profile */}

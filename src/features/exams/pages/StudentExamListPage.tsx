@@ -746,7 +746,6 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import DarkModeToggle from "@/components/layout/DarkModeToggle";
 import { ReplayTourButton } from '@/features/tour/FlowTour';
-import { useSchoolProfile } from '@/features/auth/hooks/useSchoolProfile';
 
 interface Exam {
   id: string;
@@ -772,7 +771,6 @@ export default function StudentExamListPage() {
   const navigate = useNavigate();
   const { user } = useAuthStore();
   const { logout } = useAuth();
-  const school = useSchoolProfile();
   
   // State variables
   const [allExams, setAllExams] = useState<Exam[]>([]);
@@ -1202,25 +1200,6 @@ export default function StudentExamListPage() {
       {/* Premium Student Profile Card */}
       <Card data-tour="student-profile" className="bg-white dark:bg-slate-900 border-slate-200/60 dark:border-slate-800/80 shadow-sm rounded-2xl overflow-hidden">
         <CardBody className="p-5 md:p-6">
-          {school && (
-            <div className="flex items-center gap-3 pb-4 mb-4 border-b border-slate-100 dark:border-slate-800">
-              <div className="h-12 w-12 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 shrink-0 ring-1 ring-slate-200/80 dark:ring-slate-700">
-                <img
-                  src={school.badge_url || '/logo192.png'}
-                  alt={school.school_name}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="min-w-0">
-                <p className="text-base font-bold text-slate-800 dark:text-slate-100 truncate">
-                  {school.school_name}
-                </p>
-                <p className="text-[11px] font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
-                  Computer Based Testing
-                </p>
-              </div>
-            </div>
-          )}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-[#00356b] to-red-900 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-blue-500/20">
